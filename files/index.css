@@ -86,13 +86,13 @@ a {
     right: 0;
     bottom: 0;
     width: 250px;
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(0, 0, 0, 0.486);
     margin-left: 93px;
     transition: .3s;
 }
 
 .movie-button-filter:hover {
-    background-color: rgba(0, 0, 0, 0.733);
+    background-color: rgba(0, 0, 0, 0.671);
 }
 
 .movie-btn-text {
@@ -124,13 +124,13 @@ a {
     right: 0;
     bottom: 0;
     width: 250px;
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(0, 0, 0, 0.328);
     margin-left: 357px;
     transition: .3s;
 }
 
 .series-button-filter:hover {
-    background-color: rgba(0, 0, 0, 0.733);
+    background-color: rgba(0, 0, 0, 0.589);
 }
 
 .series-btn-text {

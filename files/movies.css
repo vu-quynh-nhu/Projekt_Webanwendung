@@ -4,6 +4,10 @@ body {
     font-style: normal;
 }
 
+a {
+    text-decoration: none;
+}
+
 .login-btn {
     margin-right: 15px;
     border-style: none;
@@ -75,6 +79,12 @@ body {
 
 /*fixed image size*/
 .card-img-top {
+    width: 100%;
+    height: 265px;
+    object-fit: cover;
+}
+
+.card-img-top img {
     width: 100%;
     height: 265px;
     object-fit: cover;
