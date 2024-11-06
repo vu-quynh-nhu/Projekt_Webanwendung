@@ -4,6 +4,10 @@ body {
     font-style: normal;
 }
 
+a {
+    text-decoration: none;
+}
+
 .login-btn {
     margin-right: 15px;
     border-style: none;
@@ -26,7 +30,6 @@ body {
 }
 
 .reviewer-logo {
-    text-decoration: none; 
     color: white;
     margin-left: 30px;
     font-weight: 600;
@@ -71,9 +74,36 @@ body {
     border-radius: 5px;
     width: 250px;
     height: 150px;
+    margin-right: 10px;
+    background-image: url("/img/movies.jpg");
+    background-size: cover;
+}
+
+.movie-button-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.575);
+    margin-left: 93px;
+    transition: .3s;
+}
+
+.movie-button-filter:hover {
+    background-color: rgba(0, 0, 0, 0.733);
+}
+
+.movie-btn-text {
+    position: relative;
+    color: rgb(255, 255, 255);
+    width: 70px;
+    height: 32px;
+    margin-left: 83px;
     font-weight: 500;
     font-size: 30px;
-    margin-right: 10px;
+    z-index: 1;
 }
 
 .series-btn {
@@ -83,4 +113,33 @@ body {
     height: 150px;
     font-weight: 500;
     font-size: 30px;
+    background-image: url("/img/series.jpg");
+    background-size: cover;
+}
+
+.series-button-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.575);
+    margin-left: 357px;
+    transition: .3s;
+}
+
+.series-button-filter:hover {
+    background-color: rgba(0, 0, 0, 0.733);
+}
+
+.series-btn-text {
+    position: relative;
+    color: rgb(255, 255, 255);
+    width: 70px;
+    height: 32px;
+    margin-left: 74px;
+    font-weight: 500;
+    font-size: 30px;
+    z-index: 1;
 }
