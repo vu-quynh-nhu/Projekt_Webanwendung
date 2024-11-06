@@ -311,4 +311,6 @@ a {
 
 .review-text {
     width: 1360px;
+    height: 170px;
+    resize: none;
 }
