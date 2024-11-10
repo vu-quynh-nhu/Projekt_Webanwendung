@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: film_title_page.html"); 
+        header("Location: film_title_page.php"); 
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
