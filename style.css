@@ -4,7 +4,11 @@ body {
   font-family: "Gabarito", sans-serif;
 }
 
-.form-outline {
+.nav-form{
+ top: 0%;
+}
+
+.login-form{
   background-color: black;
   color: white;
   border: 3px solid #f1f1f1;
