@@ -1,34 +1,39 @@
 body {
-    background-color: white;
-    color: black;
-    font-family: "Gabarito", sans-serif;
+  background-color: white;
+  color: black;
+  font-family: "Gabarito", sans-serif;
 }
 
 .form-outline {
-    background-color: black;
-    color: white;
-    border: 3px solid #f1f1f1;
-    top: 50%;
-    left: 50%;
-    border-radius: 25px;
-    width: 40%; 
-    height: 70%;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    padding: 3%;
-  }
-
-  .form-series{
-    height: 77%;
+  background-color: black;
+  color: white;
+  border: 3px solid #f1f1f1;
+  top: 50%;
+  left: 50%;
+  border-radius: 25px;
+  width: 40%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
 }
 
-.film-title{
+.form-series {
+  height: 77%;
+}
+
+.film-title {
   background-color: black;
   color: white;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: center;
   letter-spacing: 1px;
   font-size: 3rem;
@@ -37,18 +42,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .align-links {
   display: flex;
-  justify-content: flex-end; 
-  width: 100%;               
-  padding-right: 20px;     
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 20px;
   gap: 20px;
-  margin-top: 10px;  
+  margin-top: 10px;
 }
 
-.align-links a:visited{
-  color: #d32525  
+.align-links a:visited {
+  color: #d32525
 }
 
-.logo-section{
+.logo-section {
   margin-top: 10px
 }
 
@@ -57,22 +62,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 50px;
 }
 
-  .main-header {
-    top: 30%;
-    left: 50%;
-  }
+.main-header {
+  top: 30%;
+  left: 50%;
+}
 
-  .form-control {
-    background-color: #fff;
-    color: #000;
-    border-radius: 25px;
+.form-control {
+  background-color: #fff;
+  color: #000;
+  border-radius: 25px;
 }
 
 
 .form-label {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
 }
 
 .thumbnail {
@@ -86,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   cursor: pointer;
 }
+
 .btn-create {
   background-color: white;
   color: black;
@@ -94,26 +100,27 @@ h1, h2, h3, h4, h5, h6 {
   width: 60%;
 }
 
-.btn-lg{
+.btn-lg {
   margin-top: 8%;
   width: 60%;
 }
-  .category{
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      box-sizing: border-box;
-  }
-  
-  .genre-box{
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
+
+.category {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.genre-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
 }
 
 .genre-box img {
@@ -127,38 +134,39 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   font-weight: bold;
 }
-    
-  input[type=email], input[type=password] {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 25px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 25px;
-  }
 
-  label {
-    padding-left: 10px;
-    margin: 8px 25px;
-  }
-  
-  button {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 50%;
-    border-radius: 25px;
-  }
+input[type=email],
+input[type=password] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 25px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+label {
+  padding-left: 10px;
+  margin: 8px 25px;
+}
+
+button {
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  border-radius: 25px;
+}
 
 
-  
-  button:hover {
-    opacity: 0.8;
-  }
 
-  .navbar-text {
-    font-size: 1rem;
-    margin-right: 20px; 
-  }
+button:hover {
+  opacity: 0.8;
+}
+
+.navbar-text {
+  font-size: 1rem;
+  margin-right: 20px;
+}
