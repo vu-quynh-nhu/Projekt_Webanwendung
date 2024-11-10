@@ -13,51 +13,49 @@
         <span class="h3 fw-bold mb-0">Logo</span>
     </div>
 
-    <h1>Serie hinzufügen</h1>
-    
     <div class="container">
-       
+        <h1>Serie hinzufügen</h1>
+
         <div class="form-container">
            
-            <form class="form-series">
+            <form action="add_series.php" method="POST" class="form-series" enctype="multipart/form-data">
                 <div class="row">
                     
                     <div class="col-md-6">
                         <div class="mb-3">
                             <label for="title" class="form-label">Titel</label>
-                            <input type="text" class="form-control" id="title">
+                            <input type="text" class="form-control" id="title" name="title">
                         </div>
                         <div class="mb-3">
                             <label for="director" class="form-label">Regisseur:in</label>
-                            <input type="text" class="form-control" id="director">
+                            <input type="text" class="form-control" id="director" name="director">
                         </div>
                         <div class="mb-3">
                             <label for="actors" class="form-label">Schauspieler:innen</label>
-                            <input type="text" class="form-control" id="actors">
+                            <input type="text" class="form-control" id="actors" name="actors">
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Jahr</label>
-                            <input type="text" class="form-control" id="year">
+                            <input type="text" class="form-control" id="year" name="year">
                         </div>
                         <div class="mb-3">
                             <label for="genre" class="form-label">Genre</label>
-                            <input type="text" class="form-control" id="genre">
+                            <input type="text" class="form-control" id="genre" name="genre">
                         </div>
                         <div class="mb-3">
-                            <label for="genre" class="form-label">Staffeln</label>
-                            <input type="text" class="form-control" id="staffeln">
+                            <label for="seasons" class="form-label">Staffeln</label>
+                            <input type="text" class="form-control" id="seasons" name="seasons">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label class="form-label">Thumbnail hinzufügen</label>
-                            <div class="thumbnail">
-                                <span>+</span>
-                            </div>
+                            <label for="thumbnail" class="form-label">Thumbnail hinzufügen</label>
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <button type="submit">Hochladen</button>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Beschreibung</label>
-                            <textarea class="form-control" id="description" rows="10"></textarea>
+                            <textarea class="form-control" id="description" rows="8" name="description"></textarea>
                         </div>
                     </div>
                 </div>
