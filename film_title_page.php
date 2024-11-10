@@ -11,23 +11,35 @@
 </head>
 <body class="film-title">
    
-    <section class="vh-100">
-        <div class="container-fluid d-flex justify-content-between align-items-center" style="display: flex; padding: 0 20px;">
-           
-            <div class="logo-section">
-                <span class="h3 fw-bold mb-0">Logo</span>
-            </div>
+  <?php
+  session_start();
+  ?>
 
-            
-            <div class="align-links d-flex">
-                <a class="h3 fw-bold" href="login.html">Anmelden</a>
-                <a class="h3 fw-bold" href="signup.html">Registrieren</a>
-            </div>
-        </div>
+<section class="vh-100">
+<div class="container-fluid d-flex justify-content-between align-items-center" style="display: flex; padding: 0 20px;">      
+  
+<div class="logo-section">
+  <a class="h3 fw-bold mb-0 reviewer-logo" href="index.html"> Reviewer </a>
+</div>
+          
+<div class="align-links d-flex">
+    <?php if (isset($_SESSION['username'])): ?>
+      <!-- If user is logged in, show "Hello, username" and the "Sign out" button -->
+      <span>Hallo, <?php echo $_SESSION['username']; ?></span>
+      <form action="logout.php" method="POST" class="nav-form">
+          <button class="btn btn-danger" type="submit">Abmelden</button>
+      </form>      
+    <?php else: ?>
+      <!-- If user is not logged in, show "Anmelden" and "Registrieren" buttons -->
+      <a class="nav-link" href="login.html">Anmelden</a>
+      <a class="nav-link" href="signup.html">Registrieren</a>    
+    <?php endif; ?>
+</div>
       
-            <div>
-                <h1 class="fw-normal">Filme</h1>
-            </div>
+          
+<div>
+  <h1 class="fw-normal">Filme</h1>
+</div>
 
 
             <div class="category">
@@ -53,12 +65,12 @@
                     <a href=".">Drama</a>
                  </div>
                  <div class="genre-box">
-                  <img src="./pictures/erotik.jpg" alt="Erotik">
-                    <a href=".">Erotik</a>
-                 </div>
-                 <div class="genre-box">
                   <img src="./pictures/fantasy.jpg" alt="Fantasy">
                     <a href=".">Fantasy</a>
+                 </div>
+                 <div class="genre-box">
+                  <img src="./pictures/historical.jpg" alt="Erotik">
+                    <a href=".">History</a>
                  </div>
                  <div class="genre-box">
                   <img src="./pictures/horror.jpg" alt="Horror">
