@@ -72,12 +72,12 @@
                     <a href=".">Drama</a>
                  </div>
                  <div class="genre-box">
-                  <img src="./pictures/erotik.jpg" alt="Erotik">
-                    <a href=".">Erotik</a>
-                 </div>
-                 <div class="genre-box">
                   <img src="./pictures/fantasy.jpg" alt="Fantasy">
                     <a href=".">Fantasy</a>
+                 </div>
+                 <div class="genre-box">
+                  <img src="./pictures/historical.jpg" alt="Erotik">
+                  <a href=".">History</a>
                  </div>
                  <div class="genre-box">
                   <img src="./pictures/horror.jpg" alt="Horror">
@@ -120,5 +120,5 @@
             </div>
         </div>
     </section>
-    <script src="./bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>

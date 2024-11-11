@@ -8,7 +8,7 @@ body {
  top: 0%;
 }
 
-.login-form{
+.form-container{
   background-color: black;
   color: white;
   border: 3px solid #f1f1f1;
