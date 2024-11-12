@@ -54,6 +54,7 @@ a {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    object-position: 0% 35%;
     opacity: 0.3;
 }
 
@@ -116,6 +117,21 @@ a {
     border-radius: 10px;
     overflow-x: hidden;
 }
+
+/*scrollbar customization*/
+.movie-about::-webkit-scrollbar {
+    width: 8px;
+ }
+ 
+ .movie-about::-webkit-scrollbar-track {
+     border-radius: 10px;
+     background-color: rgb(167, 167, 167);
+ }
+ 
+ .movie-about::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     background-color: rgb(209, 209, 209);
+ }
 
 .movie-about-attributes {
     margin-left: 20px;
@@ -215,7 +231,7 @@ a {
 
 .movie-review-container {
     width: 93%;
-    height: 1220px;
+    height: 1320px;
     background-color: rgb(34, 34, 34);
     margin: 70px 0px 40px 0px;
     border-radius: 10px;
@@ -289,7 +305,7 @@ a {
     margin-top: 70px;
     background-color: black;
     width: 100%;
-    height: 415px;
+    height: 505px;
     border-color: rgb(94, 94, 94);
     border-style: solid;
     border-width: thin; 
@@ -309,8 +325,83 @@ a {
     margin: 20px 25px 20px 25px;
 }
 
-.review-text {
+#name-label {
+    color: white;
+    font-size: 22px;
+}
+
+#username {
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    color: rgb(153, 123, 84);
+    height: 35px;
+    margin-top: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+#username:focus {
+    outline: none;
+}
+
+#review-text {
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
     width: 1360px;
     height: 170px;
     resize: none;
+    color: rgb(153, 123, 84);
+    font-size: 17px;
+}
+
+#review-text {
+    outline: none;
+}
+
+#sumbit-comment-btn {
+    border: solid;
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: rgb(71, 71, 71);
+    background-color: black;
+    padding: 10px;
+    width: 90px;
+    margin-top: 12px;
+    color: white;
+    transition: 300ms;
+}
+
+#sumbit-comment-btn:hover {
+    background-color: rgb(20, 20, 20);
+}
+
+
+#starrating-label {
+    color: white;
+    font-size: 22px;
+}
+
+.star-rating-container {
+    direction: rtl;
+}
+
+.star-rating-container label {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.star-rating-container input[type="radio"] {
+    display: none;
+}
+
+.star-rating-container input[type="radio"]:checked ~ label {
+    color: rgb(153, 123, 84);
+}
+
+.star-rating-container label:hover, .star-rating-container label:hover ~ label {
+    color: rgb(153, 123, 84);
 }
