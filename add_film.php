@@ -24,6 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $actors = isset($_POST['actors']) ? $conn->real_escape_string($_POST['actors']) : '';
     $short_description = isset($_POST['description']) ? $conn->real_escape_string($_POST['description']) : '';
     $thumbnail = isset($_POST['thumbnail']) ? $conn->real_escape_string($_POST['thumbnail']) : '';
+
+    $thumbnail_path = NULL;
     
         if (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] == 0) {
             // Validate file type and size 
@@ -43,27 +45,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], $target_file)) {
                     // Escape and store the file path in the database
                     $thumbnail_path = $conn->real_escape_string($target_file);
-   
-                $sql = "INSERT INTO movies (title, release_year, genre, directors, actors, short_description, thumbnail) 
-                VALUES ('$title', '$release_year', '$genre', '$directors', '$actors', '$short_description', '$thumbnail_path')";
-
-                if ($conn->query($sql) === TRUE) {
-                echo "Success";
-                //header("Location: film_title_page.html"); //hier müsste zum entsprechenden Film weitergeleitet werden
-                exit;
                 } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
+                    echo "Failed to upload the file.";
                 }
             } else {
-                echo "Failed to upload the file.";
+                echo "Invalid file type or size. Only JPG, PNG, and GIF files under 2MB are allowed.";
             }
-        } else {
-            echo "Invalid file type or size. Only JPG, PNG, and GIF files under 2MB are allowed.";
         }
-    } else {
-        echo "No file uploaded or file upload error.";
+    
+        // Insert into the database, using $thumbnail_path which could be NULL
+        $sql = "INSERT INTO movies (title, release_year, genre, directors, actors, short_description, thumbnail) 
+                VALUES ('$title', '$release_year', '$genre', '$directors', '$actors', '$short_description', ";
+        $sql .= is_null($thumbnail_path) ? "NULL" : "'$thumbnail_path'";
+        $sql .= ")";
+    
+        if ($conn->query($sql) === TRUE) {
+            echo "Success";
+            //header("Location: film_title_page.html"); // Redirect to corresponding film page
+            exit;
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
-}
-
-$conn->close();
-?>
+    
+    $conn->close();
+    ?>
