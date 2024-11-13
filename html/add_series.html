@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer</title>
+    <link rel="stylesheet" href="../css/style.css" /> 
+    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+         
+            <div class="box">
+              <div class="logo-section">
+                <a class="h3 fw-bold mb-0 reviewer-logo" href="index.html"> Reviewer </a>
+              </div>
+            </div>
+          
+          <div class="col-8 text-center">
+            <div>
+              <h1 class="text-center">Serie hinzufügen</h1>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        <div class="form-container">
+           
+            <form action="../php/add_series.php" method="POST" class="form-series" enctype="multipart/form-data">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titel</label>
+                            <input type="text" class="form-control" id="title" name="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="director" class="form-label">Regisseur:in</label>
+                            <input type="text" class="form-control" id="director" name="director">
+                        </div>
+                        <div class="mb-3">
+                            <label for="actors" class="form-label">Schauspieler:innen</label>
+                            <input type="text" class="form-control" id="actors" name="actors">
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Jahr</label>
+                            <input type="text" class="form-control" id="year" name="year">
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre" class="form-label">Genre</label>
+                            <input type="text" class="form-control" id="genre" name="genre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="seasons" class="form-label">Staffeln</label>
+                            <input type="text" class="form-control" id="seasons" name="seasons">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="thumbnail" class="form-label">Thumbnail hinzufügen</label>
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <button type="submit">Hochladen</button>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Beschreibung</label>
+                            <textarea class="form-control" id="description" rows="8" name="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-create mt-3">Erstellen</button>
+            </form>
+        </div>
+    </div>
+       
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

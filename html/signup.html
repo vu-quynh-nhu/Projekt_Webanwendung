@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="description" content="Filmbewertungsportal">
+    <link rel="stylesheet" href="../css/style.css" /> 
+    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Reviewer</title>
+</head>
+<body>
+   
+    <section class="vh-100">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6 text-black">
+      
+              <div class="px-5 ms-xl-4">                
+                <span class="h3 fw-bold mb-0">Logo</span>
+              </div>
+      
+             
+                <form action="../php/signup.php" method="POST" class="login-form">
+                    <h3 class="fw-normal" style="letter-spacing: 1px;">Registrieren</h3>
+                
+                    <div data-mdb-input-init class="form-outline" style="width: 100%;">
+                        <label class="form-label" for="username" style="padding-left: 10px;">Nutzername</label>
+                        <input type="username" name="username" id="username" class="form-control form-control-lg rounded-pill" required/>                   
+                    </div>
+                
+
+                    <div data-mdb-input-init class="form-outline" style="width: 100%;">
+                        <label class="form-label" for="email" style="padding-left: 10px;">E-Mail</label>
+                        <input type="email" name="email" id="email" class="form-control form-control-lg rounded-pill" required/>                   
+                    </div>
+                
+                    <div data-mdb-input-init class="form-outline" style="width: 100%;">
+                        <label class="form-label" for="password" style="padding-left: 10px;">Passwort</label>
+                        <input type="password" name="password" id="password" class="form-control form-control-lg" required/>                   
+                    </div>
+                
+                    <div class="pt-1 mb-4" style="width: 100%; display: flex; justify-content: center;">
+                        <input data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg" type="submit" value="Registrieren">
+                    </div>
+                
+                    <p><a href="login.html" class="link-info">Ich habe schon ein Konto</a></p>
+                </form>
+                
+      
+              </div>
+      
+           
+          
+          </div>
+        </div>
+      </section>
+      <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../js/script.js"></script>
+</body>

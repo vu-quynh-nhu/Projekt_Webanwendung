@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviewer</title>
+    <link rel="stylesheet" href="../css/style.css" /> 
+    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
+</head>
+<body>
+
+    <div class="logo-section">
+        <span class="h3 fw-bold mb-0">Logo</span>
+    </div>
+
+    <h1>Serie bearbeiten</h1>
+    
+    <div class="container">
+       
+        <div class="form-container">
+           
+            <form class="form-series">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titel</label>
+                            <input type="text" class="form-control" id="title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="director" class="form-label">Regisseur:in</label>
+                            <input type="text" class="form-control" id="director">
+                        </div>
+                        <div class="mb-3">
+                            <label for="actors" class="form-label">Schauspieler:innen</label>
+                            <input type="text" class="form-control" id="actors">
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Jahr</label>
+                            <input type="text" class="form-control" id="year">
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre" class="form-label">Genre</label>
+                            <input type="text" class="form-control" id="genre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="genre" class="form-label">Staffeln</label>
+                            <input type="text" class="form-control" id="staffeln">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Thumbnail hinzufügen</label>
+                            <div class="thumbnail">
+                                <span>+</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Beschreibung</label>
+                            <textarea class="form-control" id="description" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-create mt-3">Bearbeiten</button>
+            </form>
+        </div>
+    </div>
+       
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
