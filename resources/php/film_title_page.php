@@ -42,8 +42,8 @@
               </form>
             <?php else: ?>
               <!-- If user is not logged in, show "Anmelden" and "Registrieren" buttons -->
-              <a class="nav-link" href="login.html">Anmelden</a>
-              <a class="nav-link" href="signup.html">Registrieren</a>
+              <a class="nav-link" href="../html/login.html">Anmelden</a>
+              <a class="nav-link" href="../html/signup.html">Registrieren</a>
             <?php endif; ?>
           </div>
         </div>

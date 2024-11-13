@@ -10,9 +10,9 @@ for (let year = currentYear; year >= 1900; year--) {
 
 const genreSelect = document.getElementById('genre');
 
-fetch('genre_list.json').then(response => {
+fetch('/resources/json/genre_list.json').then(response => {
     if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Network response was not ok' + response.statusText);
     }
     return response.json(); 
 })
