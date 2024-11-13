@@ -21,10 +21,11 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         const thumbnail = document.createElement("img");
         thumbnail.src = series_data.thumbnail;
         thumbnail.style.width = "100%";
-        thumbnail.style.height = "170px";
+        thumbnail.style.height = "280px";
         thumbnail.style.objectFit = "cover";
         thumbnail.style.borderTopLeftRadius = "5px";
         thumbnail.style.borderTopRightRadius = "5px";
+        thumbnail.style.opacity = "0.7"
         cardDiv.appendChild(thumbnail);
 
         const titleDiv = document.createElement("div");
@@ -63,7 +64,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     star.style.marginRight = "7px";
                     star.style.fontSize = "20px";
                     star.innerHTML = "★";
-                    starRatingContainer.appendChild(star);
+                    titleDiv.appendChild(star);
                 }
             } else {
                 let totalStars = 5;
@@ -73,7 +74,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     star.style.marginRight = "7px";
                     star.style.fontSize = "20px";
                     star.innerHTML = "★";
-                    starRatingContainer.appendChild(star);
+                    titleDiv.appendChild(star);
                 }
             }
         })
