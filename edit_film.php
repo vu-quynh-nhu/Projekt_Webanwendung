@@ -56,11 +56,15 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Jahr</label>
-                            <input type="text" class="form-control" id="year" name="year" value="<?php echo htmlspecialchars($film['release_year']); ?>">
+                            <select type="year" class="form-control" id="year" name="year" value="<?php echo htmlspecialchars($film['release_year']); ?>">
+                                <option value="">--Jahr auswählen--</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="genre" class="form-label">Genre</label>
-                            <input type="text" class="form-control" id="genre" name="genre" value="<?php echo htmlspecialchars($film['genre']); ?>">
+                            <select type="genre" class="form-control" id="genre" name="genre" value="<?php echo htmlspecialchars($film['genre']); ?>">
+                                <option value="">--Genre auswählen--</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -82,5 +86,6 @@ if (isset($_GET['id'])) {
     </div>
        
     <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
