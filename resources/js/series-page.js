@@ -71,12 +71,14 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     comments_top_section.style.height = "50px";
                     comments_top_section.style.fontWeight = "500";
                     comments_top_section.style.fontSize = "20px";
+                    comments_top_section.style.paddingTop = "10px";
                     comments_top_section.style.textAlign = "left";
                     comment.appendChild(comments_top_section);
 
                     const comments_top_section_commentator = document.createElement("div");
                     comments_top_section_commentator.className = "comments-top-section-commentator";
                     comments_top_section_commentator.innerHTML = seriesComment.commentator_name;
+                    comments_top_section_commentator.style.marginLeft = "25px";
                     comments_top_section_commentator.style.minWidth = "10px";
                     comments_top_section_commentator.style.display = "inline-block";
                     comments_top_section.appendChild(comments_top_section_commentator);

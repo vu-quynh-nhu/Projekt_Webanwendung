@@ -25,7 +25,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         thumbnail.style.objectFit = "cover";
         thumbnail.style.borderTopLeftRadius = "5px";
         thumbnail.style.borderTopRightRadius = "5px";
-        thumbnail.style.opacity = "0.7"
+        thumbnail.style.opacity = "0.4"
         cardDiv.appendChild(thumbnail);
 
         const titleDiv = document.createElement("div");
