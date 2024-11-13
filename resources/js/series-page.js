@@ -10,10 +10,10 @@ let splitDate = date.split("-");
 let reverseDate = `${splitDate[2]}.${splitDate[1]}.${splitDate[0]}`
 
 const commentsContainer = document.querySelector(".series-comments");
+const starRatingContainer = document.querySelector(".series-starRating");
 
 fetch("../php/getSeries.php").then(response => response.json()).then(data => {
     const selectedSeries = data.find(series => series.title === selectedSeriesTitle);
-
     if (selectedSeries) {
         document.querySelector(".series-title").textContent = selectedSeries.title;
         document.querySelector(".series-release-year").innerHTML = selectedSeries.release_year;
@@ -31,7 +31,6 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         document.title = "Reviewer - " + selectedSeries.title;
 
         const seriesId = selectedSeries.id;
-
         fetch(`../php/getCommentsSeries.php?series_id=${seriesId}`).then(response => response.json()).then(comments => {
             if (comments.length === 0) {
                 const noComment = document.createElement("div");
@@ -44,6 +43,16 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                 noComment.style.fontWeight = "500";
                 noComment.textContent = "Es gibt zu " + selectedSeries.title + " noch keine Kommentare.";
                 commentsContainer.appendChild(noComment);
+
+                let totalStars = 5;
+                for (let i = 0; i < totalStars; i++) {
+                    const star = document.createElement("label");
+                    star.style.color = "white";
+                    star.style.marginRight = "7px";
+                    star.style.fontSize = "20px";
+                    star.innerHTML = "★";
+                    starRatingContainer.appendChild(star);
+                }
             } else {
                 comments.forEach(seriesComment => {
                     const comment = document.createElement("div");
@@ -117,6 +126,26 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     commemts_bottom_section.style.textAlign = "justify";
                     comment.appendChild(commemts_bottom_section);
                 })
+
+                let sumStarRating = 0;
+                const totalStars = 5;
+                comments.forEach(starRating => {
+                    sumStarRating += starRating.starrating;
+                })
+                let averageStarRating = sumStarRating / comments.length;
+
+                for (let i = 0; i < totalStars; i++) {
+                    const star = document.createElement("label");
+                    if (i < averageStarRating) {
+                        star.style.color = "rgb(153, 123, 84)";
+                    } else {
+                        star.style.color = "white";
+                    }
+                    star.style.marginRight = "7px";
+                    star.style.fontSize = "20px";
+                    star.innerHTML = "★";
+                    starRatingContainer.appendChild(star);
+                }
             }
         })
     };

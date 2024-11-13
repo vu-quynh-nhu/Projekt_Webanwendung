@@ -67,12 +67,18 @@ a {
     left: 50px;
 }
 
+.series-starRating {
+    position: absolute;
+    top: 90px;
+    left: 50px;
+}
+
 .series-release-year {
     color: white;
     font-weight: 500;
     font-size: 25px;
     position: absolute;
-    top: 90px;
+    top: 115px;
     left: 50px;
 }
 
