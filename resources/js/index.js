@@ -1,10 +1,4 @@
-function getMovieDataByName(name) {
-    const passedUrl = new URLSearchParams(window.location.search);
-    return passedUrl.get(name);
-}
-
-const selectedMovieTitle = getMovieDataByName("title");
-
-fetch("../php/getMovies.php").then(response => response.json()).then(data => {
-    document.querySelector(".")
+fetch("../php/getIndexImages.php").then(response => response.json()).then(data => {
+    document.querySelector(".movies-btn img").src = data[0].image;
+    document.querySelector(".series-btn img").src = data[1].image; 
 })

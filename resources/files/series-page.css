@@ -30,7 +30,7 @@ a {
 }
 
 .reviewer-logo {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
     margin-left: 30px;
     font-weight: 600;
@@ -50,7 +50,7 @@ a {
     height: 350px;
 }
 
-.top-page img{
+.top-page img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -127,17 +127,17 @@ a {
 /*scrollbar customization*/
 .series-about::-webkit-scrollbar {
     width: 8px;
- }
- 
- .series-about::-webkit-scrollbar-track {
-     border-radius: 10px;
-     background-color: rgb(167, 167, 167);
- }
- 
- .series-about::-webkit-scrollbar-thumb {
-     border-radius: 10px;
-     background-color: rgb(209, 209, 209);
- }
+}
+
+.series-about::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(167, 167, 167);
+}
+
+.series-about::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
+}
 
 .series-about-attributes {
     margin-left: 20px;
@@ -223,7 +223,7 @@ a {
 
 /*scrollbar customization*/
 .series-decription::-webkit-scrollbar {
-   width: 8px;
+    width: 8px;
 }
 
 .series-decription::-webkit-scrollbar-track {
@@ -277,43 +277,16 @@ a {
 /*scrollbar customization*/
 .series-comments::-webkit-scrollbar {
     width: 8px;
- }
- 
- .series-comments::-webkit-scrollbar-track {
-     border-radius: 10px;
-     background-color: rgb(119, 119, 119);
- }
- 
- .series-comments::-webkit-scrollbar-thumb {
-     border-radius: 10px;
-     background-color: rgb(209, 209, 209);
- }
-
-.comment {
-    height: 155px;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-    border-color: rgb(94, 94, 94);
-    border-style: solid;
-    border-width: thin; 
 }
 
-.comments-top-section {
-    color: rgb(153, 123, 84);
-    font-weight: 500;
-    font-size: 18px;
-    text-align: left;
-    padding: 10px 0px 0px 25px;
+.series-comments::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(119, 119, 119);
 }
 
-.comments-bottom-section {
-    color: white;
-    height: 91px;
-    font-weight: 500;
-    font-size: 20px;
-    text-align: left;
-    padding: 10px 25px 0px 25px;
-    margin-bottom: 25px;
+.series-comments::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
 }
 
 .series-review-form-container {
@@ -323,7 +296,7 @@ a {
     height: 505px;
     border-color: rgb(94, 94, 94);
     border-style: solid;
-    border-width: thin; 
+    border-width: thin;
 }
 
 .series-review-form-header {
@@ -413,11 +386,11 @@ a {
     display: none;
 }
 
-.star-rating-container input[type="radio"]:checked ~ label {
+.star-rating-container input[type="radio"]:checked~label {
     color: rgb(153, 123, 84);
 }
 
-.star-rating-container label:hover, .star-rating-container label:hover ~ label {
+.star-rating-container label:hover,
+.star-rating-container label:hover~label {
     color: rgb(153, 123, 84);
 }
-

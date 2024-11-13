@@ -13,7 +13,7 @@ echo "Connection Successful";
 
 //add movie
 $entry = "INSERT INTO images(image)
-VALUES('http://localhost/Reviewer/resources/img/movies.jpg')";
+VALUES('http://localhost/Reviewer/resources/img/series.jpg')";
 
 if ($conn->query($entry) === TRUE) {
     echo ("Movie was added successfully.");

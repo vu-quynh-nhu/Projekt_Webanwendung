@@ -21,7 +21,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         const thumbnail = document.createElement("img");
         thumbnail.src = series_data.thumbnail;
         thumbnail.style.width = "100%";
-        thumbnail.style.height = "280px";
+        thumbnail.style.height = "170px";
         thumbnail.style.objectFit = "cover";
         thumbnail.style.borderTopLeftRadius = "5px";
         thumbnail.style.borderTopRightRadius = "5px";
@@ -42,5 +42,40 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
 
         seriesPageRedirection.appendChild(cardDiv);
         seriesContainer.appendChild(seriesPageRedirection);
+
+        const seriesId = series_data.id;
+        fetch(`../php/getCommentsSeries.php?series_id=${seriesId}`).then(response => response.json()).then(comments => {
+            if (comments.length > 0) {
+                let sumStarRating = 0;
+                const totalStars = 5;
+                comments.forEach(starRating => {
+                    sumStarRating += starRating.starrating;
+                })
+                let averageStarRating = sumStarRating / comments.length;
+
+                for (let i = 0; i < totalStars; i++) {
+                    const star = document.createElement("label");
+                    if (i < averageStarRating) {
+                        star.style.color = "rgb(153, 123, 84)";
+                    } else {
+                        star.style.color = "white";
+                    }
+                    star.style.marginRight = "7px";
+                    star.style.fontSize = "20px";
+                    star.innerHTML = "★";
+                    starRatingContainer.appendChild(star);
+                }
+            } else {
+                let totalStars = 5;
+                for (let i = 0; i < totalStars; i++) {
+                    const star = document.createElement("label");
+                    star.style.color = "white";
+                    star.style.marginRight = "7px";
+                    star.style.fontSize = "20px";
+                    star.innerHTML = "★";
+                    starRatingContainer.appendChild(star);
+                }
+            }
+        })
     });
 })
