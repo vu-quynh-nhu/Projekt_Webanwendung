@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Filmbewertungsportal">
-  <link rel="stylesheet" href="style.css" />
-  <link href="./bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
   <title>Reviewer</title>
 </head>
 
@@ -53,71 +53,71 @@
     <div class="category">
       <!-- Genres -->
       <div class="genre-box">
-        <img src="./pictures/abenteuer.jpg" alt="Abenteuer">
+        <img src="../img/abenteuer.jpg" alt="Abenteuer">
         <a href=".">Abenteuer</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/action.jpg" alt="Action">
+        <img src="../img/action.jpg" alt="Action">
         <a href=".">Action</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/animation.jpg" alt="Animation">
+        <img src="../img/animation.jpg" alt="Animation">
         <a href=".">Animation</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/doku.jpg" alt="Doku">
+        <img src="../img/doku.jpg" alt="Doku">
         <a href=".">Doku</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/drama.jpg" alt="Drama">
+        <img src="../img/drama.jpg" alt="Drama">
         <a href=".">Drama</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/fantasy.jpg" alt="Fantasy">
+        <img src="../img/fantasy.jpg" alt="Fantasy">
         <a href=".">Fantasy</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/historical.jpg" alt="Erotik">
+        <img src="../img/historical.jpg" alt="Erotik">
         <a href=".">History</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/horror.jpg" alt="Horror">
+        <img src="../img/horror.jpg" alt="Horror">
         <a href=".">Horror</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/kinder.jpg" alt="Kinder">
+        <img src="../img/kinder.jpg" alt="Kinder">
         <a href=".">Kinder</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/komoedie.jpg" alt="Komödie">
+        <img src="../img/komoedie.jpg" alt="Komödie">
         <a href=".">Komödie</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/krimi.jpg" alt="Krimi">
+        <img src="../img/krimi.jpg" alt="Krimi">
         <a href=".">Krimi</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/musik.jpg" alt="Musik">
+        <img src="../img/musik.jpg" alt="Musik">
         <a href=".">Musik</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/romantik.jpg" alt="Romantik">
+        <img src="../img/romantik.jpg" alt="Romantik">
         <a href=".">Romantik</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/scifi.jpg" alt="Science-Fiction">
+        <img src="../img/scifi.jpg" alt="Science-Fiction">
         <a href=".">Science-Fiction</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/thriller.jpg" alt="Thriller">
+        <img src="../img/thriller.jpg" alt="Thriller">
         <a href=".">Thriller</a>
       </div>
       <div class="genre-box">
-        <img src="./pictures/western.jpg" alt="Western">
+        <img src="../img/western.jpg" alt="Western">
         <a href=".">Western</a>
       </div>
     </div>
 
   </section>
-  <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>

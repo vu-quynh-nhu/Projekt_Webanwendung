@@ -23,8 +23,8 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviewer</title>
-    <link rel="stylesheet" href="style.css" /> 
-    <link href="./bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/style.css" /> 
+    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
 </head>
 <body>
 
@@ -85,7 +85,7 @@ if (isset($_GET['id'])) {
         </div>
     </div>
        
-    <script src="./bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
