@@ -46,6 +46,8 @@
             <div class="series-about-year">Jahr</div>
             <div class="series-about-attributes">Genre: </div>
             <div class="series-about-genre">Genrename</div>
+            <div class="series-about-attributes">Staffeln: </div>
+            <div class="series-about-seasons">Staffeln</div>
             <div class="series-about-attributes">Regisseur*innen: </div>
             <div class="series-about-director">Name(n)</div>
             <div class="series-about-attributes">Darsteller*innen: </div>
@@ -66,17 +68,6 @@
                 Bewertungen
             </div>
             <div class="series-comments">
-                <div class="comment">
-                    <div class="comments-top-section">
-                        Anonym
-                    </div>
-                    <div class="comments-bottom-section">
-                        Der Diktator ist eine Komödie mit Sacha Baron Cohen, der auch die Hauptrolle in Borat spielte.
-                        Wie auch in Borat prallen Kulturen aufeinander, die amerikanische Kultur und die des fiktiven
-                        arabischen Ölstaates Wadiya. Deren Anführer General Admiral Aladeen strandet als verwöhnter
-                        Despot in Amerika und findet sich unfreiwillig auf einem Selbstfindungstrip.
-                    </div>
-                </div>
             </div>
 
             <div class="series-review-form-container">
@@ -104,8 +95,8 @@
 
                     <input type="hidden" id="series_id" name="series_id" value="">
                     <input type="hidden" id="series_name" name="series_name" value="">
-                    <textarea id="review-text" name="comment_text"
-                        placeholder="Schreibe hier deine Bewertung"></textarea><br>
+                    <input type="hidden" id="date_of_comment" name="date_of_comment" value="">
+                    <textarea id="review-text" name="comment_text" placeholder="Schreibe hier deine Bewertung"></textarea><br>
                     <center>
                         <button id="sumbit-comment-btn" type="submit">senden</button>
                     </center>

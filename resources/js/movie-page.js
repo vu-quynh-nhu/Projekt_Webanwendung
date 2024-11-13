@@ -4,6 +4,10 @@ function getMovieDataByName(name) {
 }
 
 const selectedMovieTitle = getMovieDataByName("title");
+let newDate = new Date();
+let date = newDate.toISOString().split("T")[0];
+let splitDate = date.split("-");
+let reverseDate = `${splitDate[2]}.${splitDate[1]}.${splitDate[0]}`
 
 fetch("../php/getMovies.php").then(response => response.json()).then(data => {
     const selectedMovie = data.find(movie => movie.title === selectedMovieTitle);
@@ -20,6 +24,7 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
         document.getElementById("thumbnail").src = selectedMovie.thumbnail;
         document.getElementById("movies_id").value = selectedMovie.id; 
         document.getElementById("movies_name").value = selectedMovie.title; 
+        document.getElementById("date_of_comment").value = date; 
         document.title = "Reviewer - " + selectedMovie.title;
     };
 })
