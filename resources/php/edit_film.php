@@ -37,7 +37,7 @@ if (isset($_GET['id'])) {
 
         <div class="form-container">
            
-            <form action="film_edited.php?id=<?php echo $film_id; ?>" method="POST" class="form">
+            <form action="film_edited.php?id=<?php echo $film_id; ?>" method="POST" enctype="multipart/form-data" class="form">
               
                     
                     <div class="col-md-6">
@@ -67,11 +67,11 @@ if (isset($_GET['id'])) {
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6">                        
                         <div class="mb-3">
                             <label class="form-label">Thumbnail ändern</label>
-                            <img src="./uploads/67310a8586523_PXL_20240529_153604134.jpg" height="100rem">
-                            <input type="file"  name="thumbnail" id="thumbnail" accept="image/*">
+                            <img src="<?php echo htmlspecialchars($film['thumbnail']); ?>" height="100rem">
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                             <button type="submit">Hochladen</button>
                         </div>
                         <div class="mb-3">

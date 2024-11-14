@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
             if (in_array($file_type, $allowed_types) && $file_size <= $max_size) {
             
-                $target_dir = "uploads/";
+                $target_dir = "../uploads/";
                 $file_name = basename($_FILES['thumbnail']['name']);
                 $target_file = $target_dir . uniqid() . "_" . $file_name;
     
