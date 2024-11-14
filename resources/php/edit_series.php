@@ -37,11 +37,11 @@ if (isset($_GET['id'])) {
 
         <div class="form-container">
            
-            <form action="series_edited.php?id=<?php echo $film_id; ?>" method="POST" enctype="multipart/form-data" class="form">
+            <form action="series_edited.php?id=<?php echo $series_id; ?>" method="POST" enctype="multipart/form-data" class="form">
               
                     
                     <div class="col-md-6">
-                    <input type="hidden" name="id" value="<?php echo $film_id; ?>">
+                    <input type="hidden" name="id" value="<?php echo $series_id; ?>">
                         <div class="mb-3">
                             <label for="title" class="form-label">Titel</label>
                             <input type="text" class="form-control" id="title" name="title" value="<?php echo htmlspecialchars($series['title']); ?>">

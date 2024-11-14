@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $year = $_POST['year'];
     $genre = $_POST['genre'];
     $description = $_POST['description'];
-    $thumbnail = $_POST['thumbnail'];
 
     $thumbnail_path = NULL;
 

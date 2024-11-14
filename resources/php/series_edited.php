@@ -11,26 +11,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $genre = $_POST['genre'];
     $seasons = $_POST['seasons'];
     $description = $_POST['description'];
-    $thumbnail = $_POST['thumbnail'];
-
+    
     $thumbnail_path = NULL;
 
     
     if (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] == 0) {
         $thumbnail_path = NULL;
-        // Validate file type and size 
+        // Validate file type and size
         $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
         $max_size = 2 * 1024 * 1024; // 2MB
-
+    
         $file_type = $_FILES['thumbnail']['type'];
         $file_size = $_FILES['thumbnail']['size'];
     
         if (in_array($file_type, $allowed_types) && $file_size <= $max_size) {
-        
             $target_dir = "../uploads/";
             $file_name = basename($_FILES['thumbnail']['name']);
             $target_file = $target_dir . uniqid() . "_" . $file_name;
-
+    
             // Move the uploaded file to the server directory
             if (move_uploaded_file($_FILES['thumbnail']['tmp_name'], $target_file)) {
                 // Store the file path in the database
@@ -41,7 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Invalid file type or size. Only JPG, PNG, and GIF files under 2MB are allowed.";            
         }
+    } else {
+        // If no file is uploaded, leave $thumbnail_path as NULL
+        $thumbnail_path = NULL;
     }
+    
 
    // Output the value of $thumbnail_path to debug
     // if (isset($thumbnail_path)) {
