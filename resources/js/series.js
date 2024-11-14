@@ -14,27 +14,27 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         cardDiv.style.marginRight = "10px";
         cardDiv.style.width = "200px";
         cardDiv.style.height = "330px";
+        cardDiv.style.borderRadius = "7px";
         cardDiv.style.backgroundColor = "white";
-        cardDiv.style.borderRadius = "5px";
         seriesContainer.appendChild(cardDiv);
 
         const thumbnail = document.createElement("img");
         thumbnail.src = series_data.thumbnail;
         thumbnail.style.width = "100%";
-        thumbnail.style.height = "280px";
+        thumbnail.style.height = "267.5px";
         thumbnail.style.objectFit = "cover";
-        thumbnail.style.borderTopLeftRadius = "5px";
-        thumbnail.style.borderTopRightRadius = "5px";
-        thumbnail.style.opacity = "0.3"
+        thumbnail.style.borderTopLeftRadius = "7px";
+        thumbnail.style.borderTopRightRadius = "7px";
+        //thumbnail.style.filter = "brightness(50%)";
         cardDiv.appendChild(thumbnail);
 
         const titleDiv = document.createElement("div");
         titleDiv.style.textAlign = "center";
-        titleDiv.style.fontSize = "20px";
+        titleDiv.style.fontSize = "16.5px";
         titleDiv.style.fontWeight = "700";
         titleDiv.style.color = "black";
         titleDiv.style.height = "50px";
-        titleDiv.style.paddingTop = "9px";
+        titleDiv.style.paddingTop = "5px";
         titleDiv.style.overflow = "hidden";
         titleDiv.style.whiteSpace = "nowrap";
         titleDiv.style.textOverflow = "ellipsis";
@@ -64,7 +64,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     star.style.marginRight = "7px";
                     star.style.fontSize = "20px";
                     star.innerHTML = "★";
-                    titleDiv.appendChild(star);
+                    //titleDiv.appendChild(star);
                 }
             } else {
                 let totalStars = 5;
@@ -74,7 +74,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     star.style.marginRight = "7px";
                     star.style.fontSize = "20px";
                     star.innerHTML = "★";
-                    titleDiv.appendChild(star);
+                    //titleDiv.appendChild(star);
                 }
             }
         })

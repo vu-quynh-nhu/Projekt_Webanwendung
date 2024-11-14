@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="series-page.css">
+    <link rel="stylesheet" href="../css/series-page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,17 +15,15 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="reviewer-logo" href="index.html"> Reviewer </a>
-            <form class="d-flex">
-                <button class="login-btn" type="button">
-                    Anmelden
-                </button>
-                <button class="register-btn" type="button">
-                    Registrieren
-                </button>
-            </form>
+            <button class="login-btn" type="button">
+                Anmelden
+            </button>
+            <button class="register-btn" type="button">
+                Registrieren
+            </button>
         </div>
     </nav>
 
@@ -97,8 +95,8 @@
                     <input type="hidden" id="series_id" name="series_id" value="">
                     <input type="hidden" id="series_name" name="series_name" value="">
                     <input type="hidden" id="date_of_comment" name="date_of_comment" value="">
-                    <textarea id="review-text" name="comment_text" placeholder="Schreibe hier deine Bewertung"></textarea><br>
                     <center>
+                        <textarea id="review-text" name="comment_text" placeholder="Schreibe hier deine Bewertung"></textarea><br>
                         <button id="sumbit-comment-btn" type="submit">senden</button>
                     </center>
                 </form>
@@ -106,7 +104,7 @@
         </div>
     </center>
     <script src="../js/series-page.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

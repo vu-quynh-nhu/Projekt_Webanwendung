@@ -5,9 +5,7 @@ function getSeriesDataByName(name) {
 
 const selectedSeriesTitle = getSeriesDataByName("title");
 let newDate = new Date();
-let date = newDate.toISOString().split("T")[0];
-let splitDate = date.split("-");
-let reverseDate = `${splitDate[2]}.${splitDate[1]}.${splitDate[0]}`
+let date = newDate.toISOString().split("T")[0];  
 
 const commentsContainer = document.querySelector(".series-comments");
 const starRatingContainer = document.querySelector(".series-starRating");
@@ -106,6 +104,8 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                         comments_top_section_starRating.appendChild(star);
                     }
 
+                    const date_of_comment = seriesComment.date_of_comment.split("-");
+                    const reverseDate = `${date_of_comment[2]}.${date_of_comment[1]}.${date_of_comment[0]}`
                     const comments_top_section_date = document.createElement("div");
                     comments_top_section_date.className = "comments-top-section-commentator";
                     comments_top_section_date.style.width = "139px";

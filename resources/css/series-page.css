@@ -8,25 +8,44 @@ a {
     text-decoration: none;
 }
 
+.navbar {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: rgb(0, 0, 0);
+}
+
 .login-btn {
-    margin-right: 15px;
-    border-style: none;
     color: white;
+    font-family: "Gabarito", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
     background-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    border: none;
+    /*top, right, bottom, left*/
+    padding: 10px 15px 10px 15px;
+    border-width: thin;
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
 }
 
 .register-btn {
     color: white;
+    font-family: "Gabarito", sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     background-color: rgb(0, 0, 0);
     border-style: solid;
     border-radius: 20px;
     border-color: rgb(48, 48, 48);
     /*top, right, bottom, left*/
-    padding: 5px 10px 5px 10px;
+    padding: 8px 13px 8px 13px;
     border-width: thin;
-    margin-right: 20px;
+    margin-right: 15px;
+    float: right;
+    cursor: pointer;
 }
 
 .reviewer-logo {
@@ -35,11 +54,6 @@ a {
     margin-left: 30px;
     font-weight: 600;
     font-size: 27px;
-}
-
-.navbar {
-    margin-top: 12px;
-    background: rgb(0, 0, 0);
 }
 
 .top-page {
@@ -115,7 +129,7 @@ a {
 
 .series-about {
     display: inline-block;
-    padding: 10px 0px 10px 0px;
+    padding: 15px 20px 15px 20px;
     background-color: white;
     width: 600px;
     height: 300px;
@@ -140,23 +154,21 @@ a {
 }
 
 .series-about-attributes {
-    margin-left: 20px;
     font-weight: 700;
     font-size: 18.5px;
     width: 600px;
 }
 
 .series-about-title {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .series-about-year {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
@@ -165,34 +177,33 @@ a {
 }
 
 .series-about-genre {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .series-about-seasons {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .series-about-director {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .series-about-actors {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
@@ -215,7 +226,7 @@ a {
     border-radius: 10px;
     overflow: auto;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 18px;
     word-wrap: break-word;
     /*Blocksatz*/
     text-align: justify;
@@ -268,10 +279,9 @@ a {
     height: 620px;
     width: 100%;
     background-color: rgb(0, 0, 0);
-    border-color: rgb(94, 94, 94);
-    border-style: solid;
-    border-width: thin;
-    overflow: auto;
+    border-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /*scrollbar customization*/
@@ -293,7 +303,7 @@ a {
     margin-top: 70px;
     background-color: black;
     width: 100%;
-    height: 505px;
+    height: 513px;
     border-color: rgb(94, 94, 94);
     border-style: solid;
     border-width: thin;
@@ -358,6 +368,8 @@ a {
     width: 90px;
     margin-top: 12px;
     color: white;
+    font-family: "Gabarito", sans-serif;
+    font-size: 15px;
     transition: 300ms;
 }
 
