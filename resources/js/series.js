@@ -25,10 +25,10 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         thumbnail.style.objectFit = "cover";
         thumbnail.style.borderTopLeftRadius = "7px";
         thumbnail.style.borderTopRightRadius = "7px";
-        //thumbnail.style.filter = "brightness(50%)";
         cardDiv.appendChild(thumbnail);
 
         const titleDiv = document.createElement("div");
+        titleDiv.className = "titleDiv";
         titleDiv.style.textAlign = "center";
         titleDiv.style.fontSize = "16.5px";
         titleDiv.style.fontWeight = "700";
@@ -40,6 +40,10 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         titleDiv.style.textOverflow = "ellipsis";
         titleDiv.textContent = series_data.title;
         cardDiv.appendChild(titleDiv);
+
+        const starDiv = document.createElement("div");
+        starDiv.className = "starDiv";
+        titleDiv.appendChild(starDiv);
 
         seriesPageRedirection.appendChild(cardDiv);
         seriesContainer.appendChild(seriesPageRedirection);
@@ -59,22 +63,32 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                     if (i < averageStarRating) {
                         star.style.color = "rgb(153, 123, 84)";
                     } else {
-                        star.style.color = "white";
+                        star.style.color = "black";
                     }
-                    star.style.marginRight = "7px";
+
+                    if (i < totalStars - 1) {
+                        star.style.marginRight = "7px";
+                    }
+                    
                     star.style.fontSize = "20px";
                     star.innerHTML = "★";
-                    //titleDiv.appendChild(star);
+                    star.style.cursor ="pointer";
+                    starDiv.appendChild(star);
                 }
             } else {
                 let totalStars = 5;
                 for (let i = 0; i < totalStars; i++) {
                     const star = document.createElement("label");
-                    star.style.color = "white";
-                    star.style.marginRight = "7px";
+                    star.style.color = "black";
+
+                    if (i < totalStars - 1) {
+                        star.style.marginRight = "7px";
+                    }
+                    
                     star.style.fontSize = "20px";
                     star.innerHTML = "★";
-                    //titleDiv.appendChild(star);
+                    star.style.cursor ="pointer";
+                    starDiv.appendChild(star);
                 }
             }
         })

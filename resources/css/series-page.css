@@ -83,7 +83,7 @@ a {
 
 .series-starRating {
     position: absolute;
-    top: 90px;
+    top: 80px;
     left: 50px;
 }
 
@@ -330,13 +330,14 @@ a {
 
 #commentator_name {
     border: none;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;
     color: rgb(153, 123, 84);
     height: 35px;
-    margin-top: 10px;
+    min-width: 150px;
+    margin: 10px 0px 10px 0px;
+    font-family: "Gabarito", sans-serif;
     font-size: 17px;
-    margin-bottom: 10px;
 }
 
 #commentator_name:focus {
@@ -351,11 +352,17 @@ a {
     height: 170px;
     resize: none;
     color: rgb(153, 123, 84);
+    font-family: "Gabarito", sans-serif;
     font-size: 17px;
+    outline: none;
+    height: 170px;
+    flex: 1;
 }
 
-#review-text {
-    outline: none;
+.review-text-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 #sumbit-comment-btn {
@@ -371,6 +378,7 @@ a {
     font-family: "Gabarito", sans-serif;
     font-size: 15px;
     transition: 300ms;
+    cursor: pointer;
 }
 
 #sumbit-comment-btn:hover {
