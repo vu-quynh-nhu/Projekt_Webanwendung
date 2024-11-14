@@ -30,7 +30,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         const titleDiv = document.createElement("div");
         titleDiv.className = "titleDiv";
         titleDiv.style.textAlign = "center";
-        titleDiv.style.fontSize = "16.5px";
+        titleDiv.style.fontSize = "17px";
         titleDiv.style.fontWeight = "700";
         titleDiv.style.color = "black";
         titleDiv.style.height = "50px";
