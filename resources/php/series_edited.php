@@ -3,20 +3,17 @@ include 'db.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $film_id = $_POST['id'];
+    $series_id = $_POST['id'];
     $title = $_POST['title'];
     $director = $_POST['director'];
     $actors = $_POST['actors'];
     $year = $_POST['year'];
     $genre = $_POST['genre'];
+    $seasons = $_POST['seasons'];
     $description = $_POST['description'];
     $thumbnail = $_POST['thumbnail'];
 
     $thumbnail_path = NULL;
-
-    //echo "<pre>";
-    //print_r($_FILES);
-    //echo "</pre>";
 
     
     if (isset($_FILES['thumbnail']) && $_FILES['thumbnail']['error'] == 0) {
@@ -53,21 +50,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //     echo "No thumbnail provided or upload failed.<br>";
     // }
 
-    $sql = "UPDATE movies SET title = ?, directors = ?, actors = ?, release_year = ?, genre = ?, short_description = ?";
+    $sql = "UPDATE series SET title = ?, directors = ?, actors = ?, release_year = ?, genre = ?, seasons = ?, short_description = ?";
 
-    $params = [$title, $director, $actors, $year, $genre, $description];
+    $params = [$title, $director, $actors, $year, $genre, $seasons, $description];
     if (!is_null($thumbnail_path)) {
         $sql .= ", thumbnail = ?";
         $params[] = $thumbnail_path; 
     }
 
     $sql .= " WHERE id = ?";
-    $params[] = $film_id; 
+    $params[] = $series_id; 
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute($params);
 
-    echo "Film updated successfully.";
+    echo "Show updated successfully.";
     //header("Location: film_title_page.html"); // Redirect to corresponding film page
 }
 

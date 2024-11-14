@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         if (in_array($file_type, $allowed_types) && $file_size <= $max_size) {
         
-            $target_dir = "uploads/";
+            $target_dir = "../uploads/";
             $file_name = basename($_FILES['thumbnail']['name']);
             $target_file = $target_dir . uniqid() . "_" . $file_name;
 
@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert into the database, using $thumbnail_path which could be NULL
-    $sql = "INSERT INTO series (title, release_year, genre, directors, actors, short_description, thumbnail, seasons) 
-            VALUES ('$title', '$release_year', '$genre', '$directors', '$actors', '$short_description', '$seasons' ";
+    $sql = "INSERT INTO series (title, release_year, genre, directors, actors, short_description, seasons, thumbnail) 
+            VALUES ('$title', '$release_year', '$genre', '$directors', '$actors', '$short_description', '$seasons', ";
     $sql .= is_null($thumbnail_path) ? "NULL" : "'$thumbnail_path'";
     $sql .= ")";
 
