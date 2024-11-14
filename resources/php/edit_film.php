@@ -48,11 +48,11 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="mb-3">
                             <label for="director" class="form-label">Regisseur:in</label>
-                            <textarea  id="director" rows="8" name="director" value="<?php echo htmlspecialchars($film['directors']); ?>"></textarea>
+                            <textarea id="director" rows="8" name="director"><?php echo htmlspecialchars($film['directors']); ?></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="actors" class="form-label">Schauspieler:innen</label>
-                            <textarea  id="actors" rows="8" name="actors" value="<?php echo htmlspecialchars($film['actors']); ?>"></textarea>
+                            <textarea id="actors" rows="8" name="actors"><?php echo htmlspecialchars($film['actors']); ?></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Jahr</label>
@@ -76,8 +76,9 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Beschreibung</label>
-                            <textarea class="form-control" id="description" name="description" rows="8" 
-                            value="<?php echo htmlspecialchars($film['short_description']); ?>"></textarea>
+                            <textarea class="form-control" id="description" name="description" rows="8">
+                                <?php echo htmlspecialchars($film['short_description']); ?>
+                            </textarea>
                         </div>
                     </div>
                 
