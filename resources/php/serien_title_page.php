@@ -16,7 +16,7 @@
   ?>
 
   <section class="vh-100">
-    <div class="container-fluid">
+    <div>
       <div class="row">
         <div class="col">
           <div class="box">
