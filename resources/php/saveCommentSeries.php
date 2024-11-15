@@ -21,12 +21,10 @@ $sql = "INSERT INTO series_comments (series_name, series_id, commentator_name, c
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sissis", $series_name, $series_id, $commentator_name, $comment_text, $starrating, $date_of_comment);
 
-
 if ($stmt->execute()) {
     if (isset($_SERVER['HTTP_REFERER'])) {
         header("Location: " . $_SERVER['HTTP_REFERER']);
     }
-    
 } else {
     echo "Error";
 }

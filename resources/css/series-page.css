@@ -83,7 +83,7 @@ a {
 
 .series-starRating {
     position: absolute;
-    top: 80px;
+    top: 85px;
     left: 50px;
 }
 
@@ -254,6 +254,8 @@ a {
     font-size: 25px;
     width: 40%;
 }
+
+/*COMMENTS*/
 
 .series-review-container {
     width: 93%;

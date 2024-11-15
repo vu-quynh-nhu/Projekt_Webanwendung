@@ -14,23 +14,22 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="reviewer-logo" href="index.html"> Reviewer </a>
-            <form class="d-flex">
-                <button class="login-btn" type="button">
-                    Anmelden
-                </button>
-                <button class="register-btn" type="button">
-                    Registrieren
-                </button>
-            </form>
+            <button class="login-btn" type="button">
+                Anmelden
+            </button>
+            <button class="register-btn" type="button">
+                Registrieren
+            </button>
         </div>
     </nav>
 
     <div class="top-page">
         <img id="thumbnail" src="">
         <div class="movie-title"> Titel </div>
+        <div class="movie-starRating"></div>
         <div class="movie-release-year"> Jahr </div>
         <div class="movie-creator"> Erstellt von: </div>
         <div class="movie-creator-name"> Nutzername </div>
@@ -65,21 +64,13 @@
                 Bewertungen
             </div>
             <div class="movie-comments">
-                <div class="comment">
-                    <div class="comments-top-section">
-                        Anonym
-                    </div>
-                    <div class="comments-bottom-section">
-                        Der Diktator ist eine Komödie mit Sacha Baron Cohen, der auch die Hauptrolle in Borat spielte. Wie auch in Borat prallen Kulturen aufeinander, die amerikanische Kultur und die des fiktiven arabischen Ölstaates Wadiya. Deren Anführer General Admiral Aladeen strandet als verwöhnter Despot in Amerika und findet sich unfreiwillig auf einem Selbstfindungstrip.
-                    </div>
-                </div>
             </div>
 
             <div class="movie-review-form-container">
                 <div class="movie-review-form-header">Bewertungen schreiben</div>
                 <form action="../php/saveCommentMovie.php" method="post" class="movie-review-form">
                     <label id="name-label">Name</label><br>
-                    <input type="text" id="username" name="commentator_name" value="Anonym" readonly><br>
+                    <input type="text" id="commentator_name" name="commentator_name" value="Anonym" readonly><br>
                     <label id="starrating-label">Sternebewertung</label><br>
                     <div class="star-rating-container">
                         <input type="radio" id="star4" name="star" value="5">
@@ -98,11 +89,12 @@
                         <label for="star0">★</label>
                     </div>
 
-                    <input type="hidden" id="movies_id" name="movies_id" value="">
-                    <input type="hidden" id="movies_name" name="movies_name" value="">
+                    <input type="hidden" id="movie_id" name="movie_id" value="">
+                    <input type="hidden" id="movie_name" name="movie_name" value="">
                     <input type="hidden" id="date_of_comment" name="date_of_comment" value="">
-                    <textarea id="review-text" name="comment_text"
-                        placeholder="Schreibe hier deine Bewertung"></textarea><br>
+                    <div class="review-text-container">
+                        <textarea id="review-text" name="comment_text" placeholder="Schreibe hier deine Bewertung"></textarea><br>
+                    </div>
                     <center>
                         <button id="sumbit-comment-btn" type="submit">senden</button>
                     </center>
@@ -111,7 +103,7 @@
         </div>
     </center>
     <script src="../js/movie-page.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

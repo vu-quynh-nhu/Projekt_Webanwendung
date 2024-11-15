@@ -16,6 +16,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         cardDiv.style.height = "330px";
         cardDiv.style.borderRadius = "7px";
         cardDiv.style.backgroundColor = "white";
+        cardDiv.style.marginBottom ="10px";
         seriesContainer.appendChild(cardDiv);
 
         const thumbnail = document.createElement("img");

@@ -8,38 +8,52 @@ a {
     text-decoration: none;
 }
 
+.navbar {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: rgb(0, 0, 0);
+}
+
 .login-btn {
-    margin-right: 15px;
-    border-style: none;
     color: white;
+    font-family: "Gabarito", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
     background-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    border: none;
+    /*top, right, bottom, left*/
+    padding: 10px 15px 10px 15px;
+    border-width: thin;
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
 }
 
 .register-btn {
     color: white;
+    font-family: "Gabarito", sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     background-color: rgb(0, 0, 0);
     border-style: solid;
     border-radius: 20px;
     border-color: rgb(48, 48, 48);
     /*top, right, bottom, left*/
-    padding: 5px 10px 5px 10px;
+    padding: 8px 13px 8px 13px;
     border-width: thin;
-    margin-right: 20px;
+    margin-right: 15px;
+    float: right;
+    cursor: pointer;
 }
 
 .reviewer-logo {
-    text-decoration: none; 
+    text-decoration: none;
     color: white;
     margin-left: 30px;
     font-weight: 600;
     font-size: 27px;
-}
-
-.navbar {
-    margin-top: 12px;
-    background: rgb(0, 0, 0);
 }
 
 .top-page {
@@ -50,7 +64,7 @@ a {
     height: 350px;
 }
 
-.top-page img{
+.top-page img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -67,12 +81,18 @@ a {
     left: 50px;
 }
 
+.movie-starRating {
+    position: absolute;
+    top: 85px;
+    left: 50px;
+}
+
 .movie-release-year {
     color: white;
     font-weight: 500;
     font-size: 25px;
     position: absolute;
-    top: 90px;
+    top: 115px;
     left: 50px;
 }
 
@@ -109,7 +129,7 @@ a {
 
 .movie-about {
     display: inline-block;
-    padding: 10px 0px 10px 0px;
+    padding: 15px 20px 15px 20px;
     background-color: white;
     width: 600px;
     height: 300px;
@@ -121,36 +141,34 @@ a {
 /*scrollbar customization*/
 .movie-about::-webkit-scrollbar {
     width: 8px;
- }
- 
- .movie-about::-webkit-scrollbar-track {
-     border-radius: 10px;
-     background-color: rgb(167, 167, 167);
- }
- 
- .movie-about::-webkit-scrollbar-thumb {
-     border-radius: 10px;
-     background-color: rgb(209, 209, 209);
- }
+}
+
+.movie-about::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(167, 167, 167);
+}
+
+.movie-about::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
+}
 
 .movie-about-attributes {
-    margin-left: 20px;
     font-weight: 700;
     font-size: 18.5px;
     width: 600px;
 }
 
 .movie-about-title {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .movie-about-year {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
@@ -159,25 +177,33 @@ a {
 }
 
 .movie-about-genre {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.movie-about-seasons {
+    font-weight: 400;
+    font-size: 17px;
+    width: 560px;
+    min-height: 20px;
+    word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .movie-about-director {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
     min-height: 20px;
     word-wrap: break-word;
+    margin-bottom: 5px;
 }
 
 .movie-about-actors {
-    margin-left: 20px;
     font-weight: 400;
     font-size: 17px;
     width: 560px;
@@ -200,7 +226,7 @@ a {
     border-radius: 10px;
     overflow: auto;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 18px;
     word-wrap: break-word;
     /*Blocksatz*/
     text-align: justify;
@@ -208,7 +234,7 @@ a {
 
 /*scrollbar customization*/
 .movie-decription::-webkit-scrollbar {
-   width: 8px;
+    width: 8px;
 }
 
 .movie-decription::-webkit-scrollbar-track {
@@ -228,6 +254,8 @@ a {
     font-size: 25px;
     width: 40%;
 }
+
+/*COMMENTS*/
 
 .movie-review-container {
     width: 93%;
@@ -253,62 +281,34 @@ a {
     height: 620px;
     width: 100%;
     background-color: rgb(0, 0, 0);
-    border-color: rgb(94, 94, 94);
-    border-style: solid;
-    border-width: thin;
-    overflow: auto;
+    border-style: none;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /*scrollbar customization*/
 .movie-comments::-webkit-scrollbar {
     width: 8px;
- }
- 
- .movie-comments::-webkit-scrollbar-track {
-     border-radius: 10px;
-     background-color: rgb(119, 119, 119);
- }
- 
- .movie-comments::-webkit-scrollbar-thumb {
-     border-radius: 10px;
-     background-color: rgb(209, 209, 209);
- }
-
-.comment {
-    height: 155px;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-    border-color: rgb(94, 94, 94);
-    border-style: solid;
-    border-width: thin; 
 }
 
-.comments-top-section {
-    color: rgb(153, 123, 84);
-    font-weight: 500;
-    font-size: 18px;
-    text-align: left;
-    padding: 10px 0px 0px 25px;
+.movie-comments::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(119, 119, 119);
 }
 
-.comments-bottom-section {
-    color: white;
-    height: 91px;
-    font-weight: 500;
-    font-size: 20px;
-    text-align: left;
-    padding: 10px 25px 0px 25px;
-    margin-bottom: 25px;
+.movie-comments::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(209, 209, 209);
 }
 
 .movie-review-form-container {
     margin-top: 70px;
     background-color: black;
     width: 100%;
-    height: 505px;
+    height: 513px;
     border-color: rgb(94, 94, 94);
     border-style: solid;
-    border-width: thin; 
+    border-width: thin;
 }
 
 .movie-review-form-header {
@@ -330,18 +330,19 @@ a {
     font-size: 22px;
 }
 
-#username {
+#commentator_name {
     border: none;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;
     color: rgb(153, 123, 84);
     height: 35px;
-    margin-top: 10px;
+    min-width: 150px;
+    margin: 10px 0px 10px 0px;
+    font-family: "Gabarito", sans-serif;
     font-size: 17px;
-    margin-bottom: 10px;
 }
 
-#username:focus {
+#commentator_name:focus {
     outline: none;
 }
 
@@ -353,11 +354,17 @@ a {
     height: 170px;
     resize: none;
     color: rgb(153, 123, 84);
+    font-family: "Gabarito", sans-serif;
     font-size: 17px;
+    outline: none;
+    height: 170px;
+    flex: 1;
 }
 
-#review-text {
-    outline: none;
+.review-text-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 #sumbit-comment-btn {
@@ -370,7 +377,10 @@ a {
     width: 90px;
     margin-top: 12px;
     color: white;
+    font-family: "Gabarito", sans-serif;
+    font-size: 15px;
     transition: 300ms;
+    cursor: pointer;
 }
 
 #sumbit-comment-btn:hover {
@@ -398,10 +408,11 @@ a {
     display: none;
 }
 
-.star-rating-container input[type="radio"]:checked ~ label {
+.star-rating-container input[type="radio"]:checked~label {
     color: rgb(153, 123, 84);
 }
 
-.star-rating-container label:hover, .star-rating-container label:hover ~ label {
+.star-rating-container label:hover,
+.star-rating-container label:hover~label {
     color: rgb(153, 123, 84);
 }
