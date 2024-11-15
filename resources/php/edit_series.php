@@ -47,15 +47,15 @@ if (isset($_GET['id'])) {
             <div class="mb-3">
                 <input type="hidden" name="id" value="<?php echo $series_id; ?>">
                     <div class="mb-3">
-                        <label for="title" class="form-label">Titel*</label></br>
+                        <label for="title" class="form-label">Titel*</label><br>
                             <input type="text" id="title" name="title" value="<?php echo htmlspecialchars($series['title']); ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="director" class="form-label">Regisseur:in</label></br>
+                            <label for="director" class="form-label">Regisseur:in</label><br>
                             <textarea id="director" rows="4" name="director"><?php echo htmlspecialchars($series['directors']); ?></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="actors" class="form-label">Schauspieler:innen</label></br>
+                            <label for="actors" class="form-label">Schauspieler:innen</label><br>
                             <textarea id="actors" rows="4" name="actors"><?php echo htmlspecialchars($series['actors']); ?></textarea>
                         </div>
                         <div class="mb-3">
@@ -75,7 +75,7 @@ if (isset($_GET['id'])) {
                             <input type="text" id="seasons" name="seasons" value="<?php echo htmlspecialchars($series['seasons']); ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="thumbnail" class="form-label">Thumbnail ändern</label></br>
+                            <label for="thumbnail" class="form-label">Thumbnail ändern</label><br>
                             <!-- <img src="<?php echo htmlspecialchars($series['thumbnail']); ?>" height="100rem"> -->
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                             <div id="thumbnail-container" style="display: none;">
@@ -84,9 +84,9 @@ if (isset($_GET['id'])) {
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Beschreibung</label></br>
+                            <label for="description" class="form-label">Beschreibung</label><br>
                             <textarea id="description" name="description" rows="8">
-                                <?php echo htmlspecialchars($series['short_description']); ?>
+                            <?php echo htmlspecialchars($series['short_description']); ?>
                             </textarea>
                         </div>
                     </div>
