@@ -142,6 +142,7 @@ h1{
   font-weight: bold;
 }
 
+input[type=username],
 input[type=email],
 input[type=password] {
   width: 90%;
