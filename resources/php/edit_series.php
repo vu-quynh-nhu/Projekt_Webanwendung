@@ -23,13 +23,13 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviewer</title>
-    <link rel="stylesheet" href="../css/style.css" /> 
     <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/style.css" /> 
 </head>
 <body>
 
     <div class="logo-section">
-        <span class="h3 fw-bold mb-0">Logo</span>
+        <span class="h3 fw-bold mb-0">Reviewer</span>
     </div>
 
     <div class="container">
@@ -37,7 +37,8 @@ if (isset($_GET['id'])) {
 
         <div class="form-container">
            
-            <form action="series_edited.php?id=<?php echo $series_id; ?>" method="POST" enctype="multipart/form-data" class="form">
+            <form action="series_edited.php?id=<?php echo $series_id; ?>" method="POST" enctype="multipart/form-data" 
+            class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100">
               
                     
                     <div class="col-md-6">
@@ -54,13 +55,13 @@ if (isset($_GET['id'])) {
                             <label for="actors" class="form-label">Schauspieler:innen</label>
                             <textarea id="actors" rows="8" name="actors"><?php echo htmlspecialchars($series['actors']); ?></textarea>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 select-wrapper">
                             <label for="year" class="form-label">Jahr</label>
                             <select type="year" class="form-control" id="year" name="year" value="<?php echo htmlspecialchars($series['release_year']); ?>">
                                 <option value="">--Jahr auswählen--</option>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 select-wrapper">
                             <label for="genre" class="form-label">Genre</label>
                             <select type="genre" class="form-control" id="genre" name="genre" value="<?php echo htmlspecialchars($series['genre']); ?>">
                                 <option value="">--Genre auswählen--</option>

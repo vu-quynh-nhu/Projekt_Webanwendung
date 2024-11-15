@@ -2,26 +2,38 @@ body {
   background-color: white;
   color: black;
   font-family: "Gabarito", sans-serif;
+  height: 100vh; 
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
 }
 
-.nav-form{
- top: 0%;
+.container-fluid {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;
 }
 
-.form-container{
+.form-container {
   background-color: black;
   color: white;
   border: 3px solid #f1f1f1;
-  top: 50%;
-  left: 50%;
   border-radius: 25px;
-  width: 40%;
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3%;
+  width: 100%;
+  max-width: 800px;
+  padding: 3rem;
 }
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form .col-md-6 {
+  flex: 1 1 300px;
+}
+
 
 .form-series {
   height: 77%;
@@ -46,6 +58,13 @@ h6 {
 
 h1{
   top: 0%;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+      padding: 1.5rem;
+  }
 }
 
 .align-links {
@@ -65,10 +84,6 @@ h1{
   margin-top: 10px
 }
 
-.container {
-  max-width: 1500px;
-  margin-top: 50px;
-}
 
 .main-header {
   top: 30%;
@@ -174,7 +189,29 @@ button:hover {
   opacity: 0.8;
 }
 
-.navbar-text {
-  font-size: 1rem;
-  margin-right: 20px;
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.8em;
+  color: #333;
+}
+
+.select-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px; 
+}
+
+/* For IE11 */
+.select-wrapper select::-ms-expand {
+  display: none;
 }
