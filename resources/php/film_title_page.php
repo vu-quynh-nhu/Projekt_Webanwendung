@@ -33,12 +33,12 @@
           </div>
         </div>
         <div class="col">
-          <div class="align-links d-flex">
+          <div class="align-links">
             <?php if (isset($_SESSION['username'])): ?>
               <!-- If user is logged in, show "Hello, username" and the "Sign out" button -->
               <span>Hallo, <?php echo $_SESSION['username']; ?></span>
-              <form action="logout.php" method="POST" class="nav-form">
-                <button class="btn btn-danger" type="submit">Abmelden</button>
+              <form action="logout.php" method="POST">
+                <button class="btn btn-danger w-100" type="submit">Abmelden</button>
               </form>
             <?php else: ?>
               <!-- If user is not logged in, show "Anmelden" and "Registrieren" buttons -->
