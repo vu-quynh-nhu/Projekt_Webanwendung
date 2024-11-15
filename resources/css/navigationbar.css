@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     font-family: "Gabarito", sans-serif;
     font-style: normal;
 }
@@ -9,8 +9,10 @@ a {
 }
 
 .navbar {
+    height: 50px;
+    width: 97%;
     padding: 10px 20px;
-    background: rgb(0, 0, 0);
+    background: black;
 }
 
 .login-btn {
