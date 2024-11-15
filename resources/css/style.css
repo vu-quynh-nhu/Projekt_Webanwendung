@@ -23,21 +23,16 @@ body {
   width: 100%;
   max-width: 100px;
   padding: 3rem;
+  overflow: hidden;
 }
 
 input, textarea, select {
   display: block;
-  width: 100%;
+  width: 60vh;
   padding: .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  appearance: none;
-  background-color: var(--bs-body-bg);
-  background-clip: padding-box;
+  background-color: white;
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .film-title {
