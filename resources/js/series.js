@@ -1,3 +1,7 @@
+fetch("../html/navigationbar.html").then(response => response.text()).then(data => {
+    document.querySelector(".navbar").innerHTML = data;
+})
+
 fetch("../php/getSeries.php").then(response => response.json()).then(data => {
     const seriesContainer = document.querySelector(".series-container");
     //sort series entries from lastly added to the database to firstly added

@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: "Gabarito", sans-serif;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    padding: 10px 20px;
+    background: rgb(0, 0, 0);
+}
+
+.login-btn {
+    color: white;
+    font-family: "Gabarito", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    border: none;
+    /*top, right, bottom, left*/
+    padding: 10px 15px 10px 15px;
+    border-width: thin;
+    margin-right: 15px;
+    float: right;
+    cursor: pointer;
+}
+
+.register-btn {
+    color: white;
+    font-family: "Gabarito", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 20px;
+    border-color: rgb(48, 48, 48);
+    /*top, right, bottom, left*/
+    padding: 8px 13px 8px 13px;
+    border-width: thin;
+    margin-right: 15px;
+    float: right;
+    cursor: pointer;
+}
+
+.reviewer-logo {
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 27px;
+}

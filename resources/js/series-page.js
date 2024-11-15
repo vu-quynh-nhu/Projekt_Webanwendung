@@ -3,13 +3,17 @@ function getSeriesDataByName(name) {
     return passedUrl.get(name);
 }
 
+fetch("../html/navigationbar.html").then(response => response.text()).then(data => {
+    document.querySelector(".navbar").innerHTML = data;
+})
+
+
 const selectedSeriesTitle = getSeriesDataByName("title");
 let newDate = new Date();
 let date = newDate.toISOString().split("T")[0];  
 
 const commentsContainer = document.querySelector(".series-comments");
 const starRatingContainer = document.querySelector(".series-starRating");
-
 fetch("../php/getSeries.php").then(response => response.json()).then(data => {
     const selectedSeries = data.find(series => series.title === selectedSeriesTitle);
     if (selectedSeries) {

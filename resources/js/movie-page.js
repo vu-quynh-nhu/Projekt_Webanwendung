@@ -3,6 +3,10 @@ function getMovieDataByName(name) {
     return passedUrl.get(name);
 }
 
+fetch("../html/navigationbar.html").then(response => response.text()).then(data => {
+    document.querySelector(".navbar").innerHTML = data;
+})
+
 const selectedMovieTitle = getMovieDataByName("title");
 let newDate = new Date();
 let date = newDate.toISOString().split("T")[0];  
