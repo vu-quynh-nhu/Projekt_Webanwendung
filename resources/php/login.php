@@ -30,8 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../html/index.html"); 
             exit;
         } else {
-            echo "Falsches Passwort. Bitte versuche es erneut.";
-            ?><a href="../html/login.html">Zurück zum Login</a><?php
+            $message = "Falsches Passwort. Bitte versuche es erneut.";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+            //header("Location: ../html/login.html"); 
         }
     } else {
         echo "Kein Nutzer mit diesem Namen gefunden.";
