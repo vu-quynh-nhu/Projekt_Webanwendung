@@ -26,7 +26,7 @@ function checkForm(event) {
     return true;
 }
 
-fetch("../html/navigationbar.html").then(response => response.text()).then(data => {
+fetch("../php/navigationbar.php").then(response => response.text()).then(data => {
     document.querySelector(".navbar").innerHTML = data;
 })
 

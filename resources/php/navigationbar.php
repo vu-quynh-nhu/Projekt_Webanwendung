@@ -21,9 +21,9 @@
         <div class="container-fluid">
             <a class="reviewer-logo" href="../html/index.html"> Reviewer </a>
             <?php if (isset($_SESSION['username'])): ?>
-                <span>Hallo, <?php echo $_SESSION['username']; ?></span>
-                <form action="logout.php" method="POST">
-                    <button class="logout" type="submit">Abmelden</button>
+                <span class="login-btn">Hallo, <?php echo $_SESSION['username']; ?></span>
+                <form action="../php/logout.php" method="POST">
+                    <button class="register-btn" type="submit">Abmelden</button>
                 </form>
             <?php else: ?>
             <a href="../html/login.html">
@@ -41,6 +41,7 @@
         </div>
     </nav>
 
+    <script src="../js/navigationbar.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
