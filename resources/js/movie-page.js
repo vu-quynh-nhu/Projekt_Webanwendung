@@ -183,6 +183,7 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
                     starRatingContainer.appendChild(star);
                 }
             }
+            
         })
     };
 })
