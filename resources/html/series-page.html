@@ -61,7 +61,7 @@
 
             <div class="series-review-form-container">
                 <div class="series-review-form-header">Bewertungen schreiben</div>
-                <form action="../php/saveCommentSeries.php" method="post" class="series-review-form">
+                <form action="../php/saveCommentSeries.php" method="post" class="series-review-form" name="submit-comment" onsubmit="return checkForm(event)">
                     <label id="name-label">Name</label><br>
                     <input type="text" id="commentator_name" name="commentator_name" value="Anonym" readonly><br>
                     <label id="starrating-label">Sternebewertung</label><br>
@@ -89,6 +89,7 @@
                         <textarea id="review-text" name="comment_text" placeholder="Schreibe hier deine Bewertung"></textarea><br>
                     </div>
                     <center>
+                        
                         <button id="sumbit-comment-btn" type="submit">senden</button>
                     </center>
                 </form>

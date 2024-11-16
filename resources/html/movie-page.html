@@ -58,7 +58,7 @@
 
             <div class="movie-review-form-container">
                 <div class="movie-review-form-header">Bewertungen schreiben</div>
-                <form action="../php/saveCommentMovie.php" method="post" class="movie-review-form">
+                <form action="../php/saveCommentMovie.php" method="post" class="movie-review-form" name="submit-comment" onsubmit="return checkForm(event)">
                     <label id="name-label">Name</label><br>
                     <input type="text" id="commentator_name" name="commentator_name" value="Anonym" readonly><br>
                     <label id="starrating-label">Sternebewertung</label><br>

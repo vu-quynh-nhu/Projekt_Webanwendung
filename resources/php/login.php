@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {            
             session_start();
             $_SESSION['username'] = $username;
-            header("Location: film_title_page.php"); 
+            header("Location: ../html/index.html"); 
             exit;
         } else {
             echo "Incorrect password. Please try again.";

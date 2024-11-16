@@ -3,6 +3,29 @@ function getMovieDataByName(name) {
     return passedUrl.get(name);
 }
 
+function checkForm(event) {
+    event.preventDefault();
+
+    var comment = document.forms["submit-comment"]["comment_text"].value;
+    var starRating = document.forms["submit-comment"]["star"].value;
+
+    var hasRatedStars = false;
+    for (let i = 0; i < starRating.length; i++) {
+        if (starRating[i].checked) {
+            hasRatedStars = true;
+        }
+        break;
+    }
+
+    if (comment.trim() === "" || !starRating) {
+        alert("Überprüfe, ob alle Felder ausgefüllt sind.");
+        return false;
+    }
+
+    document.forms["submit-comment"].submit();
+    return true;
+}
+
 fetch("../html/navigationbar.html").then(response => response.text()).then(data => {
     document.querySelector(".navbar").innerHTML = data;
 })
