@@ -21,10 +21,11 @@
         <div class="container-fluid">
             <a class="reviewer-logo" href="../html/index.html"> Reviewer </a>
             <?php if (isset($_SESSION['username'])): ?>
-                <span class="login-btn">Hallo, <?php echo $_SESSION['username']; ?></span>
-                <form action="../php/logout.php" method="POST">
-                    <button class="register-btn" type="submit">Abmelden</button>
-                </form>
+            <a href="../html/user-page.html">
+                <button class="login-btn" type="button">
+                    Hallo, <?php echo $_SESSION['username']; ?>
+                </button>   
+            </a>
             <?php else: ?>
             <a href="../html/login.html">
                 <button class="login-btn" type="button">
