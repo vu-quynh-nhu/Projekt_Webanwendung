@@ -38,11 +38,12 @@ a {
 }
 
 .add-and-logout-btns-container {
-    width: 100%;
+    width: 96%;
     height: 70px;
     margin-bottom: 30px;
     align-content: center;
     text-align: right;
+    padding-right: 60px;
 }
 
 .add {
@@ -69,6 +70,9 @@ a {
     border-radius: 20px;
     border-color: rgb(53, 53, 53);
     background-color: black;
-    margin-right: 60px;
     cursor: pointer;
+}
+
+.logout-btn {
+    display: inline-block;
 }

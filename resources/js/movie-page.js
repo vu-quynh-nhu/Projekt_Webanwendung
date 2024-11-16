@@ -54,6 +54,14 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
         document.getElementById("date_of_comment").value = date; 
         document.title = "Reviewer - " + selectedMovie.title;
 
+        fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
+            if (login.isUserLoggedIn) {
+                document.getElementById("commentator_name").value = login.username;
+            } else {
+                document.getElementById("commentator_name").value = "Anonym";
+            }
+        })
+        
         const movieId = selectedMovie.id;
         fetch(`../php/getCommentsMovie.php?movies_id=${movieId}`).then(response => response.json()).then(comments => {
             if (comments.length === 0) {
@@ -98,7 +106,6 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
                     comments_top_section.style.paddingTop = "10px";
                     comments_top_section.style.textAlign = "left";
                     comment.appendChild(comments_top_section);
-
 
                     const comments_top_section_commentator = document.createElement("div");
                     comments_top_section_commentator.className = "comments-top-section-commentator";
