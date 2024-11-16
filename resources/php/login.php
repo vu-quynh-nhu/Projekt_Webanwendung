@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location.href = "../html/login.html";
                 </script>
             <?php
+            exit;
         }
     } else {
         $message = "Kein Nutzer mit diesem Namen gefunden.";
