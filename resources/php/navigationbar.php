@@ -14,9 +14,18 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <?php
+        session_start();
+    ?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
         <div class="container-fluid">
             <a class="reviewer-logo" href="../html/index.html"> Reviewer </a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <span>Hallo, <?php echo $_SESSION['username']; ?></span>
+                <form action="logout.php" method="POST">
+                    <button class="logout" type="submit">Abmelden</button>
+                </form>
+            <?php else: ?>
             <a href="../html/login.html">
                 <button class="login-btn" type="button">
                     Anmelden
@@ -28,10 +37,10 @@
                     Registrieren
                 </button>
             </a>
+            <?php endif; ?>
         </div>
     </nav>
 
-    <script src="../js/navigationbar.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
