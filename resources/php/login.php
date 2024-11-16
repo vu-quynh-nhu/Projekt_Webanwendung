@@ -31,12 +31,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
             $message = "Falsches Passwort. Bitte versuche es erneut.";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-            //header("Location: ../html/login.html"); 
+            ?>
+            <script type="text/javascript">alert("<?php echo $message; ?>");
+                window.location.href = "../html/login.html";
+                </script>
+            <?php
         }
     } else {
-        echo "Kein Nutzer mit diesem Namen gefunden.";
-        ?><a href="../html/login.html">Zurück zum Login</a><?php
+        $message = "Kein Nutzer mit diesem Namen gefunden.";
+            ?>
+            <script type="text/javascript">alert("<?php echo $message; ?>");
+                window.location.href = "../html/login.html";
+                </script>
+            <?php
     }
 }
 
