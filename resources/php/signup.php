@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 window.location.href = "../html/signup.html";
                 </script>
             <?php
+            exit;
     }
 
     $password = password_hash($password, PASSWORD_BCRYPT);
