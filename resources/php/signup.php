@@ -19,7 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $username = $conn->real_escape_string($_POST['username']);
     $email = $conn->real_escape_string($_POST['email']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); 
+    $password = $_POST['password'];
+
+    
+
+    if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', $password)) {
+        echo "Fehler: Passwort erfüllt nicht die Vorgaben";
+        header("Location: ../html/signup.html"); 
+        exit; 
+    }
+
+    $password = password_hash($password, PASSWORD_BCRYPT);
 
    
     $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";

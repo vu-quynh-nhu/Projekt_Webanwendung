@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta name="description" content="Filmbewertungsportal">
-    <link rel="stylesheet" href="../css/style.css" /> 
-    <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Reviewer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Filmbewertungsportal">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="../bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Reviewer</title>
 </head>
+
 <body>
   <div class="row justify-content-center">
     <div class="box">
-        <div class="logo-section">
-            <a class="h3 fw-bold mb-0 reviewer-logo" href="index.html"> Reviewer </a>
-        </div>
-    </div> 
+      <div class="logo-section">
+        <a class="h3 fw-bold mb-0 reviewer-logo" href="index.html"> Reviewer </a>
+      </div>
+    </div>
   </div>
-    
-  <div class="container d-flex justify-content-center col-5 text-center">  
+
+  <div class="container d-flex justify-content-center col-5 text-center">
     <form action="../php/signup.php" method="POST">
       <h2 class="fw-normal" style="letter-spacing: 1px;">Registrieren</h2>
       <div class="text-center">
         <div class="mb-3">
           <label for="username" class="form-label">Nutzername*</label>
-          <input type="username" name="username" id="username" required/>                   
+          <input type="username" name="username" id="username" required />
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">E-Mail*</label>
-          <input type="email" name="email" id="email" required/>                   
+          <input type="email" name="email" id="email" required />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Passwort*</label>
-          <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-          title="Das Passwort muss mindestens 8 Zeichen lang sein und eine Zahl, einen Groß- und einen Kleinbuchstaben enthalten." required/>                   
+          <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Das Passwort muss mindestens 8 Zeichen lang sein und eine Zahl, einen Groß- und einen Kleinbuchstaben enthalten."
+            required />
+            <div id="password-requirements" style="font-size: small; color: gray;">
+              <p id="length" class="invalid">✔ Mindestens 8 Zeichen</p>
+              <p id="uppercase" class="invalid">✔ Mindestens 1 Großbuchstabe</p>
+              <p id="lowercase" class="invalid">✔ Mindestens 1 Kleinbuchstabe</p>
+              <p id="number" class="invalid">✔ Mindestens 1 Zahl</p>
+            </div>
         </div>
-          <input data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg" type="submit" value="Registrieren">
-          <p><a href="login.html" class="link-info">Ich habe schon ein Konto</a></p>
-      </form>
-    </div>
- 
-       
+        <input data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg" type="submit" value="Registrieren">
+        <p><a href="login.html" class="link-info">Ich habe schon ein Konto</a></p>
+    </form>
+  </div>
+
+
   <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="../js/signup.js"></script>
 </body>
+
 </html>
