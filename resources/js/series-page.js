@@ -48,7 +48,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         document.querySelector(".series-about-seasons").textContent = selectedSeries.seasons;
         document.querySelector(".series-about-director").textContent = selectedSeries.directors;
         document.querySelector(".series-about-actors").textContent = selectedSeries.actors;
-        document.querySelector(".series-decription").itextContent = selectedSeries.short_description;
+        document.querySelector(".series-decription").textContent = selectedSeries.short_description;
         document.getElementById("thumbnail").src = selectedSeries.thumbnail;
         document.getElementById("series_id").value = selectedSeries.id;
         document.getElementById("series_name").value = selectedSeries.title;

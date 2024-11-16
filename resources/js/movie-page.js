@@ -43,6 +43,7 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
         document.querySelector(".movie-title").textContent = selectedMovie.title;
         document.querySelector(".movie-release-year").textContent = selectedMovie.release_year;
         document.querySelector(".movie-about-title").textContent = selectedMovie.title;
+        document.querySelector(".movie-creator-name").textContent = selectedMovie.creator;
         document.querySelector(".movie-about-year").textContent = selectedMovie.release_year;
         document.querySelector(".movie-about-genre").textContent = selectedMovie.genre;
         document.querySelector(".movie-about-director").textContent = selectedMovie.directors;
@@ -183,7 +184,7 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
                     starRatingContainer.appendChild(star);
                 }
             }
-            
+
         })
     };
 })

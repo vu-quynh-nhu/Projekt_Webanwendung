@@ -18,6 +18,7 @@ echo "Connected successfully";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $title = isset($_POST['title']) ? $conn->real_escape_string($_POST['title']) : '';
+    $creator = isset($_POST['creator']) ? $conn->real_escape_string($_POST['creator']) : '';
     $release_year = isset($_POST['year']) ? $conn->real_escape_string($_POST['year']) : '';
     $genre = isset($_POST['genre']) ? $conn->real_escape_string($_POST['genre']) : '';
     $directors = isset($_POST['director']) ? $conn->real_escape_string($_POST['director']) : '';
@@ -54,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     
         // Insert into the database, using $thumbnail_path which could be NULL
-        $sql = "INSERT INTO movies (title, release_year, genre, directors, actors, short_description, thumbnail) 
-                VALUES ('$title', '$release_year', '$genre', '$directors', '$actors', '$short_description', ";
+        $sql = "INSERT INTO movies (title, creator, release_year, genre, directors, actors, short_description, thumbnail) 
+                VALUES ('$title', '$creator', '$release_year', '$genre', '$directors', '$actors', '$short_description', ";
         $sql .= is_null($thumbnail_path) ? "NULL" : "'$thumbnail_path'";
         $sql .= ")";
     

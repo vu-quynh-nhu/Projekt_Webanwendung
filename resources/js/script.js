@@ -61,3 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnailContainer.style.display = 'none';
     });
 });
+
+//set username as value of input with id creator
+document.addEventListener('DOMContentLoaded', function() {
+    fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
+        if (login.isUserLoggedIn) {
+            document.getElementById("creator").value = login.username;
+        } 
+    })
+})
+
+
