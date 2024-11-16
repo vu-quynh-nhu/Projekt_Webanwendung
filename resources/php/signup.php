@@ -29,6 +29,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit; 
     }
 
+    // Check if username already exists
+    $checkUserSql = "SELECT * FROM user WHERE username = '$username'";
+    $result = $conn->query($checkUserSql);
+   
+    if ($result->num_rows > 0) {
+        $message = "Fehler: Der Benutzername ist bereits vergeben.";
+            ?>
+            <script type="text/javascript">alert("<?php echo $message; ?>");
+                window.location.href = "../html/signup.html";
+                </script>
+            <?php
+    }
+
     $password = password_hash($password, PASSWORD_BCRYPT);
 
    
