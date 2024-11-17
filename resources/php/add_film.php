@@ -47,10 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Escape and store the file path in the database
                     $thumbnail_path = $conn->real_escape_string($target_file);
                 } else {
-                    echo "Failed to upload the file.";
+                    echo "Datei-Upload fehlgeschlagen.";
                 }
             } else {
-                echo "Invalid file type or size. Only JPG, PNG, and GIF files under 2MB are allowed.";
+                echo "Ungültiger Dateityp oder zu große Datei. Nur JPG-, PNG- und GIF-Dateien unter 2 MB sind erlaubt.";
             }
         }
     
