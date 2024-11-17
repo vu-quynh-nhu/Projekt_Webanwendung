@@ -2,6 +2,8 @@ body {
     background-color: black;
     font-family: "Gabarito", sans-serif;
     font-style: normal;
+    width: 100%;
+    min-height: 100%;
 }
 
 a {
@@ -13,6 +15,9 @@ a {
     width: 97%;
     padding: 10px 20px;
     background: black;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 20px;
 }
 
 .login-btn {
@@ -30,10 +35,13 @@ a {
     margin-right: 15px;
     float: right;
     cursor: pointer;
+    position: relative;
+    left: 110px;
 }
 
 .register-btn {
     color: white;
+    width: 110px;
     font-family: "Gabarito", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -47,24 +55,9 @@ a {
     margin-right: 15px;
     float: right;
     cursor: pointer;
-}
-
-.user-btn {
-    min-width: 115px;
-    color: white;
-    font-family: "Gabarito", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    background-color: rgb(0, 0, 0);
-    border-style: solid;
-    border-radius: 20px;
-    border-color: rgb(48, 48, 48);
-    /*top, right, bottom, left*/
-    padding: 8px 13px 8px 13px;
-    border-width: thin;
-    margin-right: 15px;
-    float: right;
-    cursor: pointer;
+    margin-left: 50px;
+    position: relative;
+    right: 150px;
 }
 
 .reviewer-logo {
@@ -73,5 +66,29 @@ a {
     margin-left: 25px;
     font-weight: 600;
     font-size: 27px;
+    margin-right: auto;
+}
+
+.navbar .bg-dark {
+    background-color: black !important;
+}
+
+.user-btn {
+    color: white;
+    min-width: 120px;
+    font-family: "Gabarito", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 20px;
+    border-color: rgb(48, 48, 48);
+    /*top, right, bottom, left*/
+    padding: 8px 13px 8px 13px;
+    border-width: thin;
+    margin-right: 15px;
+    float: right;
+    cursor: pointer;
+    margin-left: 50px;
 }
 

@@ -41,7 +41,7 @@
         <a href=""></a>
       </div>
       <div class="genre-box">
-        <img src="../img/historical.jpg" alt="Geschichte">
+        <img src="../img/historical.jpg" alt="History">
         <a href=""></a>
       </div>
       <div class="genre-box">
