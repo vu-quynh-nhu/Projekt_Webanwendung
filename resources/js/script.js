@@ -2,9 +2,13 @@
 fetch("../php/navigationbar.php").then(response => response.text()).then(data => {
     document.querySelector(".navbar").innerHTML = data;
 
-    let cssForNavbar = "../css/navbar_style_signUp_login.css";
-    console.log("Selected CSS File:", cssForNavbar);
-
+    let cssForNavbar;
+    if (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html")) {
+        cssForNavbar = "../css/navbar_style_signUp_login.css";
+    } else if (window.location.pathname.includes("add_film.html") || window.location.pathname.includes("add_series.html")) {
+        cssForNavbar = "../css/navbar_style_edit_and_add.css";
+    }
+    
     const navigationBarCss = document.createElement("link");
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
@@ -80,6 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
         if (login.isUserLoggedIn) {
             document.getElementById("creator").value = login.username;
-        } 
+        }
     })
 })

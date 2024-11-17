@@ -54,6 +54,10 @@ a {
     display: none;
 }
 
+.user-btn {
+    display: none;
+}
+
 .reviewer-logo {
     text-decoration: none;
     color: rgb(0, 0, 0);

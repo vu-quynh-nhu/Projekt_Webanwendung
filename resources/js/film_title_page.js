@@ -3,8 +3,6 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     document.querySelector(".navbar").innerHTML = data;
 
     let cssForNavbar = "../css/navbar_style_genrePages.css";
-    console.log("Selected CSS File:", cssForNavbar);
-
     const navigationBarCss = document.createElement("link");
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
