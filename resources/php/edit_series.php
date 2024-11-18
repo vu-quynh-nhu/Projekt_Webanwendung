@@ -56,14 +56,14 @@ if (isset($_GET['id'])) {
                         </div>
                         <div class="mb-3">
                             <label for="year" class="form-label">Jahr</label>
-                            <select type="year" id="year" name="year" value="<?php echo htmlspecialchars($series['release_year']); ?>">
-                                <option value="">--Jahr auswählen--</option>
+                            <select type="year" id="year" name="year">
+                                <option value=""><?php echo htmlspecialchars($series['release_year']); ?></option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="genre" class="form-label">Genre</label>
-                            <select type="genre" id="genre" name="genre" value="<?php echo htmlspecialchars($series['genre']); ?>">
-                                <option value="">--Genre auswählen--</option>
+                            <select type="genre" id="genre" name="genre">
+                                <option value=""><?php echo htmlspecialchars($series['genre']); ?></option>
                             </select>
                         </div>
                         <div class="mb-3">
