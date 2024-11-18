@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute($params);
 
     echo "Film updated successfully.";
-    //header("Location: film_title_page.html"); // Redirect to corresponding film page
+    header("Location: ../html/movie-page.html?title=".rawurlencode($title)); // Redirect to corresponding film page
 }
 
 ?>

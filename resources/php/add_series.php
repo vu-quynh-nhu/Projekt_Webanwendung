@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Success";
-        //header("Location: film_title_page.html"); // Redirect to corresponding series page
+        header("Location: ../html/user-page.html");  // Redirect to corresponding series page
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

@@ -23,18 +23,37 @@ a {
     font-size: 20px;
 }
 
-.myMovies {
-    background-color: rgb(56, 35, 4);
-    width: 96%;
-    min-height: 300px;
-    margin-bottom: 30px;
+.components-container {
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
 
-.mySeries {
-    background-color: rgb(56, 35, 4);
-    width: 96%;
-    min-height: 300px;
-    margin-bottom: 30px;
+.movies-container {
+    width: 94%;
+    min-height: 327px;
+    padding: 0px 27px 0px 37px;
+    color: rgb(153, 123, 84);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.series-container {
+    width: 94%;
+    min-height: 327px;
+    padding: 0px 27px 0px 37px;
+    color: rgb(153, 123, 84);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.my-postings-header {
+    min-width: 94%;
+    height: 40px;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    padding: 10px 20px 0px 50px;
+    margin: 15px 15px 15px 15px;
 }
 
 .add-and-logout-btns-container {

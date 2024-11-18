@@ -28,11 +28,7 @@ if (isset($_GET['id'])) {
 </head>
 <body>
     <div class="row justify-content-center">
-        <div class="box">
-            <div class="logo-section">
-                <a class="h3 fw-bold mb-0 reviewer-logo" href="index.html"> Reviewer </a>
-            </div>
-        </div>
+    <div class="navbar"></div>
 
         <div class="col-8">
             <div>

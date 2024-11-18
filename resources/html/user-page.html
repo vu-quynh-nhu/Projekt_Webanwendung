@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>
-            Reviewer
-        </title>
-        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="../css/user-page.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-    </head>
-    <body>
-        <div class="navbar"></div>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Reviewer
+    </title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/user-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
 
-        <div class="user-page-header">Meine Beiträge<br><span>Klick auf einen Beitrag, um ihn zu bearbeiten</span></div>
-        <div class="myMovies">
-            <div class="myMovies-header"></div>
+<body>
+    <div class="navbar"></div>
+    <div class="user-page-header">Meine Beiträge<br><span>Klick auf einen Beitrag, um ihn zu bearbeiten</span></div>
+    <div class="components-container">
+        <div class="my-postings-header">
+            Meine Filme
         </div>
-        <div class="mySeries">
-            <div class="mySeries-header"></div>
+        <div class="movies-container">
         </div>
-        <div class="add-and-logout-btns-container">
-            <a href="../html/addMovieOrSeries.html">
-                <button class="add">
-                    + hinzufügen
+
+        <div class="my-postings-header">
+            Meine Serien
+        </div>
+        <div class="series-container">
+        </div>
+    </div>
+
+    <div class="add-and-logout-btns-container">
+        <a href="../html/addMovieOrSeries.html">
+            <button class="add">
+                + Hinzufügen
+            </button>
+            <form action="../php/logout.php" method="POST" class="logout-btn">
+                <button class="logout">
+                    Abmelden
                 </button>
-                <form action="../php/logout.php" method="POST" class="logout-btn">
-                    <button class="logout">
-                        Abmelden
-                    </button>
-                </form>
-            </a>
-        </div>
+            </form>
+        </a>
+    </div>
 
-        <script src="../js/user-page.js"></script>
-        <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    </body>
+    <script src="../js/user-page.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+</body>
+
 </html>

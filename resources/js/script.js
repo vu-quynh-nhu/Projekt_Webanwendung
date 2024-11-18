@@ -5,9 +5,10 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     let cssForNavbar;
     if (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html")) {
         cssForNavbar = "../css/navbar_style_signUp_login.css";
-    } else if (window.location.pathname.includes("add_film.html") || window.location.pathname.includes("add_series.html")) {
+    } else if (window.location.pathname.includes("add_film.html") || window.location.pathname.includes("add_series.html") 
+        || window.location.pathname.includes("edit_film.php") || window.location.pathname.includes("edit_series.php")) {
         cssForNavbar = "../css/navbar_style_edit_and_add.css";
-    }
+    } 
     
     const navigationBarCss = document.createElement("link");
     navigationBarCss.rel = "stylesheet";
@@ -80,10 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //set username as value of input with id creator
-document.addEventListener('DOMContentLoaded', function() {
-    fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
-        if (login.isUserLoggedIn) {
-            document.getElementById("creator").value = login.username;
-        }
-    })
+
+fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
+     if (login.isUserLoggedIn) {
+        document.getElementById("creator").value = login.username;
+    }
 })

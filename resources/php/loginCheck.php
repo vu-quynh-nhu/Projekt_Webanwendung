@@ -1,4 +1,5 @@
 <?php 
+//takes current session
 session_start();
 
 $response = array();

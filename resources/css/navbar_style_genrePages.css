@@ -75,7 +75,7 @@ a {
 
 .user-btn {
     color: white;
-    min-width: 120px;
+    width: auto;
     font-family: "Gabarito", sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -90,5 +90,7 @@ a {
     float: right;
     cursor: pointer;
     margin-left: 50px;
+    /*won't line break after space between Hallo and the Username -> Hallo, Username*/
+    white-space: nowrap;
 }
 
