@@ -58,29 +58,27 @@ if (isset($_GET['id'])) {
                         <div class="mb-3">
                             <label for="year" class="form-label">Jahr</label>
                             <select type="year" id="year" name="year">
-                                <option value=""><?php echo htmlspecialchars($film['release_year']); ?></option>
+                                <option><?php echo htmlspecialchars($film['release_year']); ?></option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="genre" class="form-label">Genre</label>
                             <select type="genre" id="genre" name="genre">
-                                <option value=""><?php echo htmlspecialchars($film['genre']); ?></option>
+                                <option><?php echo htmlspecialchars($film['genre']); ?></option>
                             </select>
                         </div>                      
                         <div class="mb-3">
                             <label for="thumbnail" class="form-label">Thumbnail ändern</label><br>
                             <!-- <img src="<?php echo htmlspecialchars($film['thumbnail']); ?>" height="100rem"> -->
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
-                            <div id="thumbnail-container" style="display: none;">
-                                <img id="thumbnail-preview" src="" alt="Thumbnail Preview" style="max-width: 200px; max-height: 200px;">
+                            <div id="thumbnail-container">
+                                <img id="thumbnail-preview" src="<?php echo htmlspecialchars($film['thumbnail']); ?>" alt="Thumbnail Preview" style="max-width: 200px; max-height: 200px;">
                                 <button type="button" id="delete-thumbnail" class="btn btn-danger btn-sm">X</button>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Beschreibung</label><br>
-                            <textarea id="description" name="description" rows="8">
-                                <?php echo htmlspecialchars($film['short_description']); ?>
-                            </textarea>
+                            <textarea id="description" name="description" rows="8"><?php echo htmlspecialchars($film['short_description']); ?></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn-create mt-3">Bearbeiten</button>
