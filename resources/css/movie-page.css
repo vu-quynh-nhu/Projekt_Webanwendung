@@ -33,6 +33,29 @@ a {
     left: 50px;
 }
 
+.edit-movie-btn {
+    position: absolute;
+    bottom: 70px;
+    right: 50px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.13);
+    border: solid;
+    border-width: thin;
+    border-radius: 25px;
+    border-color: rgba(255, 255, 255, 0.144);
+    padding: 15px;
+    font-family: "Gabarito", sans-serif;
+    font-size: 17px;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+    backdrop-filter: blur(5px);
+    transition: 300ms;
+    cursor: pointer;
+}
+
+.edit-movie-btn:hover {
+    background-color: rgba(255, 255, 255, 0.219);
+}
+
 .movie-starRating {
     position: absolute;
     top: 85px;
