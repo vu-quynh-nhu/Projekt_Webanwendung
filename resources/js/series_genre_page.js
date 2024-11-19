@@ -22,7 +22,7 @@ fetch("../json/genre_list.json")
         const genreName = allGenres[index];
         
         link.textContent = genreName;
-        const href = `../html/movies.html?genre=${encodeURIComponent(genreName)}`;
+        const href = `../html/series.html?genre=${encodeURIComponent(genreName)}`;
         link.href = href;
         
         box.style.cursor = 'pointer';
