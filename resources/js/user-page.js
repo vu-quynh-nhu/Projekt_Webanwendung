@@ -1,4 +1,4 @@
-//TODO: Remove upload img
+
 function removeMovie(id) {
     //remove movie
     fetch("../php/deleteMovie.php", {
@@ -22,7 +22,7 @@ function removeMovie(id) {
     })
 }
 
-//TODO: Remove upload img
+
 function removeSeries(id) {
     //remove series
     fetch("../php/deleteSeries.php", {

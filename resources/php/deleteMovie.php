@@ -16,6 +16,20 @@ if (isset($header_id["id"])) {
         die("Connection Failed: " . $conn->connect_error);
     }
 
+    //remove thumbnail
+    $stmt = $conn->prepare("SELECT thumbnail FROM movies WHERE id = ?");
+    $stmt->bind_param("i", $targeted_movie_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $movie = $result->fetch_assoc();
+
+    if ($movie && $movie['thumbnail']) {
+        $thumbnail_path = $movie['thumbnail'];
+        if (file_exists($thumbnail_path)) {
+            unlink($thumbnail_path);
+        }
+    }
+
     //remove movie
     $stmt = $conn->prepare("DELETE FROM movies WHERE id = ?");
     $stmt->bind_param("i", $targeted_movie_id);
@@ -27,5 +41,8 @@ if (isset($header_id["id"])) {
     }
 
     $stmt->close();
+    $conn->close();
+} else {
+    echo json_encode(["success" => false, "message" => "No ID provided"]);
 }
 ?>
