@@ -78,6 +78,10 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                 moviesContainer.appendChild(noMoviesDiv);
             } else {
                 moviesOfTargetedUsername.forEach(movie_data => {
+                    const moviePageRedirection = document.createElement("a");
+                    moviePageRedirection.href = `movie-page.html?id=${encodeURIComponent(movie_data.id)}`;
+                    moviePageRedirection.style.textDecoration = "none";
+
                     /*Create a card component for every entry in the database*/
                     const cardDiv = document.createElement("div");
                     cardDiv.className = "card";
@@ -87,8 +91,14 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     cardDiv.style.height = "330px";
                     cardDiv.style.borderRadius = "7px";
                     cardDiv.style.backgroundColor = "white";
-                    cardDiv.style.marginBottom = "73px";
                     moviesContainer.appendChild(cardDiv);
+
+                    const wholeCardContainer = document.createElement("div");
+                    wholeCardContainer.className = "whole-card-container";
+                    wholeCardContainer.style.width = "200px";
+                    wholeCardContainer.style.display = "inline-block";
+                    wholeCardContainer.style.margin = "0px 0px 10px 10px";
+                    wholeCardContainer.appendChild(cardDiv);
 
                     const thumbnail = document.createElement("img");
                     thumbnail.src = movie_data.thumbnail;
@@ -116,6 +126,9 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     const starDiv = document.createElement("div");
                     starDiv.className = "starDiv";
                     titleDiv.appendChild(starDiv);
+
+                    moviePageRedirection.appendChild(cardDiv);
+                    wholeCardContainer.appendChild(moviePageRedirection);
 
                     const movieId = movie_data.id;
                     fetch(`../php/getCommentsMovie.php?movies_id=${movieId}`).then(response => response.json()).then(comments => {
@@ -168,7 +181,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     deleteAndEditBtnDiv.className = "deleteBtnDiv";
                     deleteAndEditBtnDiv.style.marginTop = "10px";
                     deleteAndEditBtnDiv.style.textAlign = "center";
-                    cardDiv.appendChild(deleteAndEditBtnDiv);
+                    wholeCardContainer.appendChild(deleteAndEditBtnDiv);
 
                     const deleteBtn = document.createElement("button");
                     deleteBtn.className = "delete-btn";
@@ -195,6 +208,8 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     editBtn.textContent = "Bearbeiten";
                     editBtn.style.padding = "10px";
                     editBtnAnchor.appendChild(editBtn);
+
+                    moviesContainer.appendChild(wholeCardContainer);
                 });
             }
         })
@@ -216,6 +231,10 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                 seriesContainer.appendChild(noSeriesDiv);
             } else {
                 seriesOfTargetedUsername.forEach(series_data => {
+                    const seriesPageRedirection = document.createElement("a");
+                    seriesPageRedirection.href = `series-page.html?id=${encodeURIComponent(series_data.id)}`;
+                    seriesPageRedirection.style.textDecoration = "none";
+
                     const cardDiv = document.createElement("div");
                     cardDiv.className = "card";
                     cardDiv.style.display = "inline-block";
@@ -226,6 +245,13 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     cardDiv.style.backgroundColor = "white";
                     cardDiv.style.marginBottom = "10px";
                     seriesContainer.appendChild(cardDiv);
+
+                    const wholeCardContainer = document.createElement("div");
+                    wholeCardContainer.className = "whole-card-container";
+                    wholeCardContainer.style.width = "200px";
+                    wholeCardContainer.style.display = "inline-block";
+                    wholeCardContainer.style.margin = "0px 0px 10px 10px";
+                    wholeCardContainer.appendChild(cardDiv);
 
                     const thumbnail = document.createElement("img");
                     thumbnail.src = series_data.thumbnail;
@@ -253,6 +279,9 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     const starDiv = document.createElement("div");
                     starDiv.className = "starDiv";
                     titleDiv.appendChild(starDiv);
+
+                    seriesPageRedirection.appendChild(cardDiv);
+                    wholeCardContainer.appendChild(seriesPageRedirection);
 
                     const seriesId = series_data.id;
                     fetch(`../php/getCommentsSeries.php?series_id=${seriesId}`).then(response => response.json()).then(comments => {
@@ -304,7 +333,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     deleteAndEditBtnDiv.className = "deleteBtnDiv";
                     deleteAndEditBtnDiv.style.marginTop = "10px";
                     deleteAndEditBtnDiv.style.textAlign = "center";
-                    cardDiv.appendChild(deleteAndEditBtnDiv);
+                    wholeCardContainer.appendChild(deleteAndEditBtnDiv);
 
                     const deleteBtn = document.createElement("button");
                     deleteBtn.className = "delete-btn";
@@ -331,6 +360,8 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     editBtn.textContent = "Bearbeiten";
                     editBtn.style.padding = "10px";
                     editBtnAnchor.appendChild(editBtn);
+
+                    seriesContainer.appendChild(wholeCardContainer);
                 });
             }
         })
