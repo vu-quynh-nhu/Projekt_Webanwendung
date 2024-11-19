@@ -1,6 +1,6 @@
-function getSeriesDataByName(name) {
+function getSeriesDataById(id) {
     const passedUrl = new URLSearchParams(window.location.search);
-    return passedUrl.get(name);
+    return passedUrl.get(id);
 }
 
 function checkForm(event) {
@@ -36,7 +36,7 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     document.head.appendChild(navigationBarCss);
 })
 
-const selectedSeriesTitle = getSeriesDataByName("title");
+const selectedSeriesId = getSeriesDataById("id");
 let newDate = new Date();
 let date = newDate.toISOString().split("T")[0];  
 
@@ -54,7 +54,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
     }
 
     fetch("../php/getSeries.php").then(response => response.json()).then(data => {
-        const selectedSeries = data.find(series => series.title === selectedSeriesTitle);
+        const selectedSeries = data.find(series => series.id === selectedSeriesId);
         if (selectedSeries) {
             document.querySelector(".series-title").textContent = selectedSeries.title;
             document.querySelector(".series-release-year").textContent = selectedSeries.release_year;

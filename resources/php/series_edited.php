@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute($params);
 
     echo "Show updated successfully.";
-    header("Location: ../html/series-page.html?title=".rawurlencode($title));  // Redirect to corresponding film page
+    header("Location: ../html/series-page.html?id=".urlencode($series_id));  // Redirect to corresponding film page
 }
 
 ?>

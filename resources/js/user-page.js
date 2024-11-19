@@ -1,3 +1,50 @@
+//TODO: Remove upload img
+function removeMovie(id) {
+    //remove movie
+    fetch("../php/deleteMovie.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id: id })
+    }).then(() => {
+        //remove its comments
+        return fetch("../php/deleteMovieComments.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ id: id })
+        }).then(() => {
+            //refresh
+            location.reload();
+        })
+    })
+}
+
+//TODO: Remove upload img
+function removeSeries(id) {
+    //remove series
+    fetch("../php/deleteSeries.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ id: id })
+    }).then(() => {
+        //remove its comments
+        return fetch("../php/deleteSeriesComments.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ id: id })
+        }).then(() => {
+            //refresh
+            location.reload();
+        })
+    })
+}
 
 fetch("../php/navigationbar.php").then(response => response.text()).then(data => {
     document.querySelector(".navbar").innerHTML = data;
@@ -31,10 +78,6 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                 moviesContainer.appendChild(noMoviesDiv);
             } else {
                 moviesOfTargetedUsername.forEach(movie_data => {
-                    const moviePageRedirection = document.createElement("a");
-                    moviePageRedirection.href = `../php/edit_film.php?id=${movie_data.id}`;
-                    moviePageRedirection.style.textDecoration = "none";
-
                     /*Create a card component for every entry in the database*/
                     const cardDiv = document.createElement("div");
                     cardDiv.className = "card";
@@ -44,7 +87,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     cardDiv.style.height = "330px";
                     cardDiv.style.borderRadius = "7px";
                     cardDiv.style.backgroundColor = "white";
-                    cardDiv.style.marginBottom = "10px";
+                    cardDiv.style.marginBottom = "73px";
                     moviesContainer.appendChild(cardDiv);
 
                     const thumbnail = document.createElement("img");
@@ -73,9 +116,6 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     const starDiv = document.createElement("div");
                     starDiv.className = "starDiv";
                     titleDiv.appendChild(starDiv);
-
-                    moviePageRedirection.appendChild(cardDiv);
-                    moviesContainer.appendChild(moviePageRedirection);
 
                     const movieId = movie_data.id;
                     fetch(`../php/getCommentsMovie.php?movies_id=${movieId}`).then(response => response.json()).then(comments => {
@@ -123,6 +163,38 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         }
 
                     })
+
+                    const deleteAndEditBtnDiv = document.createElement("div");
+                    deleteAndEditBtnDiv.className = "deleteBtnDiv";
+                    deleteAndEditBtnDiv.style.marginTop = "10px";
+                    deleteAndEditBtnDiv.style.textAlign = "center";
+                    cardDiv.appendChild(deleteAndEditBtnDiv);
+
+                    const deleteBtn = document.createElement("button");
+                    deleteBtn.className = "delete-btn";
+                    deleteBtn.textContent = "Entfernen";
+                    deleteBtn.style.padding = "10px";
+                    deleteBtn.addEventListener("click", function () {
+                        removeMovie(movie_data.id)
+                    });
+                    deleteAndEditBtnDiv.appendChild(deleteBtn);
+
+                    const spaceBetween = document.createElement("div");
+                    spaceBetween.className = "space-between";
+                    spaceBetween.style.width = "8px";
+                    spaceBetween.style.height = "4px";
+                    spaceBetween.style.display = "inline-block";
+                    deleteAndEditBtnDiv.appendChild(spaceBetween);
+
+                    const editBtnAnchor = document.createElement("a");
+                    editBtnAnchor.href = `../php/edit_film.php?id=${movie_data.id}`;
+                    deleteAndEditBtnDiv.appendChild(editBtnAnchor);
+
+                    const editBtn = document.createElement("button");
+                    editBtn.className = "edit-btn";
+                    editBtn.textContent = "Bearbeiten";
+                    editBtn.style.padding = "10px";
+                    editBtnAnchor.appendChild(editBtn);
                 });
             }
         })
@@ -144,10 +216,6 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                 seriesContainer.appendChild(noSeriesDiv);
             } else {
                 seriesOfTargetedUsername.forEach(series_data => {
-                    const seriesPageRedirection = document.createElement("a");
-                    seriesPageRedirection.href = `../php/edit_series.php?id=${series_data.id}`;
-                    seriesPageRedirection.style.textDecoration = "none";
-
                     const cardDiv = document.createElement("div");
                     cardDiv.className = "card";
                     cardDiv.style.display = "inline-block";
@@ -185,9 +253,6 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     const starDiv = document.createElement("div");
                     starDiv.className = "starDiv";
                     titleDiv.appendChild(starDiv);
-
-                    seriesPageRedirection.appendChild(cardDiv);
-                    seriesContainer.appendChild(seriesPageRedirection);
 
                     const seriesId = series_data.id;
                     fetch(`../php/getCommentsSeries.php?series_id=${seriesId}`).then(response => response.json()).then(comments => {
@@ -234,6 +299,38 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                             }
                         }
                     })
+
+                    const deleteAndEditBtnDiv = document.createElement("div");
+                    deleteAndEditBtnDiv.className = "deleteBtnDiv";
+                    deleteAndEditBtnDiv.style.marginTop = "10px";
+                    deleteAndEditBtnDiv.style.textAlign = "center";
+                    cardDiv.appendChild(deleteAndEditBtnDiv);
+
+                    const deleteBtn = document.createElement("button");
+                    deleteBtn.className = "delete-btn";
+                    deleteBtn.textContent = "Entfernen";
+                    deleteBtn.style.padding = "10px";
+                    deleteBtn.addEventListener("click", function () {
+                        removeSeries(series_data.id)
+                    });
+                    deleteAndEditBtnDiv.appendChild(deleteBtn);
+
+                    const spaceBetween = document.createElement("div");
+                    spaceBetween.className = "space-between";
+                    spaceBetween.style.width = "8px";
+                    spaceBetween.style.height = "4px";
+                    spaceBetween.style.display = "inline-block";
+                    deleteAndEditBtnDiv.appendChild(spaceBetween);
+
+                    const editBtnAnchor = document.createElement("a");
+                    editBtnAnchor.href = `../php/edit_series.php?id=${series_data.id}`;
+                    deleteAndEditBtnDiv.appendChild(editBtnAnchor);
+
+                    const editBtn = document.createElement("button");
+                    editBtn.className = "edit-btn";
+                    editBtn.textContent = "Bearbeiten";
+                    editBtn.style.padding = "10px";
+                    editBtnAnchor.appendChild(editBtn);
                 });
             }
         })

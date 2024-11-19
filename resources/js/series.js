@@ -35,12 +35,14 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         noSeriesDiv.innerHTML = "Es gibt für die Genre " + selectedGenre + " noch keine Einträge";
         seriesContainer.appendChild(noSeriesDiv);
 
+        document.title = "Reviewer - " + selectedGenre;
+
         const noPopularMoviesDiv = noSeriesDiv.cloneNode(true);
         seriesPopularContainer.appendChild(noPopularMoviesDiv);
     } else {
         seriesOfSelectedGenre.forEach(series_data => {
             const seriesPageRedirection = document.createElement("a");
-            seriesPageRedirection.href = `series-page.html?title=${encodeURIComponent(series_data.title)}`;
+            seriesPageRedirection.href = `series-page.html?id=${encodeURIComponent(series_data.id)}`;
             seriesPageRedirection.style.textDecoration = "none";
     
             const cardDiv = document.createElement("div");

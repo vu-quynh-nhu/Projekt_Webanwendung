@@ -35,13 +35,15 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
         noMoviesDiv.innerHTML = "Es gibt für die Genre " + selectedGenre + " noch keine Einträge";
         moviesContainer.appendChild(noMoviesDiv);
 
+        document.title = "Reviewer - " + selectedGenre;
+
         const noPopularMoviesDiv = noMoviesDiv.cloneNode(true);
         moviesPopularContainer.appendChild(noPopularMoviesDiv);
     } else {
         //loop through each movie
         moviesOfSelectedGenre.forEach(movie_data => {
             const moviePageRedirection = document.createElement("a");
-            moviePageRedirection.href = `movie-page.html?title=${encodeURIComponent(movie_data.title)}`;
+            moviePageRedirection.href = `movie-page.html?id=${encodeURIComponent(movie_data.id)}`;
             moviePageRedirection.style.textDecoration = "none";
 
             /*Create a card component for every entry in the database*/

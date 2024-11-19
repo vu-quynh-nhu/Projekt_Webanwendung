@@ -1,6 +1,6 @@
-function getMovieDataByName(name) {
+function getMovieDataById(id) {
     const passedUrl = new URLSearchParams(window.location.search);
-    return passedUrl.get(name);
+    return passedUrl.get(id);
 }
 
 function checkForm(event) {
@@ -36,7 +36,7 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     document.head.appendChild(navigationBarCss);
 })
 
-const selectedMovieTitle = getMovieDataByName("title");
+const selectedMovieId = getMovieDataById("id");
 let newDate = new Date();
 let date = newDate.toISOString().split("T")[0];  
 
@@ -54,7 +54,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
     }
 
     fetch("../php/getMovies.php").then(response => response.json()).then(data => {
-        const selectedMovie = data.find(movie => movie.title === selectedMovieTitle);
+        const selectedMovie = data.find(movie => movie.id === selectedMovieId);
          if (selectedMovie){
             document.querySelector(".movie-title").textContent = selectedMovie.title;
             document.querySelector(".movie-release-year").textContent = selectedMovie.release_year;
