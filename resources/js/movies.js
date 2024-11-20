@@ -19,10 +19,19 @@ const selectedGenre = getMoviesByGenre("genre");
 fetch("../php/getMovies.php").then(response => response.json()).then(data => {
     const moviesContainer = document.querySelector(".movies-container");
     const moviesPopularContainer = document.querySelector(".movies-popular-container");
+    const headerPage = document.querySelector(".header-page");
     //sort movie entries from lastly added to the databse to firstly added
     data.sort((firstMovie, lastMovie) => lastMovie.id - firstMovie.id);
-
     const moviesOfSelectedGenre = data.filter(movie => movie.genre === selectedGenre);
+
+    headerPage.innerHTML = `<a href="../html/film_genre_page.html">Film </a> > ${selectedGenre}`;
+    const headerPageAnchor = headerPage.querySelector("a");
+
+    headerPageAnchor.style.textDecoration = "none";
+    headerPageAnchor.style.color = "rgb(153, 123, 84)";
+
+    document.title = "Reviewer - " + selectedGenre;
+
     if (moviesOfSelectedGenre.length === 0) {
         const noMoviesDiv = document.createElement("div");
         noMoviesDiv.className = "no-movies";
@@ -34,9 +43,6 @@ fetch("../php/getMovies.php").then(response => response.json()).then(data => {
         noMoviesDiv.style.marginTop = "30px";
         noMoviesDiv.innerHTML = "Es gibt für die Genre " + selectedGenre + " noch keine Einträge";
         moviesContainer.appendChild(noMoviesDiv);
-
-        document.title = "Reviewer - " + selectedGenre;
-
         const noPopularMoviesDiv = noMoviesDiv.cloneNode(true);
         moviesPopularContainer.appendChild(noPopularMoviesDiv);
     } else {

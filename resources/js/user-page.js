@@ -179,7 +179,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
 
                     const deleteAndEditBtnDiv = document.createElement("div");
                     deleteAndEditBtnDiv.className = "deleteBtnDiv";
-                    deleteAndEditBtnDiv.style.marginTop = "10px";
+                    deleteAndEditBtnDiv.style.margin = "10px 0px 15px 0px";
                     deleteAndEditBtnDiv.style.textAlign = "center";
                     wholeCardContainer.appendChild(deleteAndEditBtnDiv);
 

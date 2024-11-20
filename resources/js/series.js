@@ -19,10 +19,19 @@ const selectedGenre = getSeriesByGenre("genre");
 fetch("../php/getSeries.php").then(response => response.json()).then(data => {
     const seriesContainer = document.querySelector(".series-container");
     const seriesPopularContainer = document.querySelector(".series-popular-container");
+    const headerPage = document.querySelector(".header-page");
     //sort series entries from lastly added to the database to firstly added
     data.sort((firstSeries, lastSeries) => lastSeries.id - firstSeries.id);
 
     const seriesOfSelectedGenre = data.filter(series => series.genre === selectedGenre);
+    headerPage.innerHTML = `<a href="../html/series_genre_page.html">Serien </a> > ${selectedGenre}`;
+    const headerPageAnchor = headerPage.querySelector("a");
+
+    headerPageAnchor.style.textDecoration = "none";
+    headerPageAnchor.style.color = "rgb(153, 123, 84)";
+    
+    document.title = "Reviewer - " + selectedGenre;
+
     if (seriesOfSelectedGenre.length === 0) {
         const noSeriesDiv = document.createElement("div");
         noSeriesDiv.className = "no-series";
@@ -34,8 +43,6 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         noSeriesDiv.style.marginTop = "30px";
         noSeriesDiv.innerHTML = "Es gibt für die Genre " + selectedGenre + " noch keine Einträge";
         seriesContainer.appendChild(noSeriesDiv);
-
-        document.title = "Reviewer - " + selectedGenre;
 
         const noPopularMoviesDiv = noSeriesDiv.cloneNode(true);
         seriesPopularContainer.appendChild(noPopularMoviesDiv);
