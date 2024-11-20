@@ -14,7 +14,7 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
     document.head.appendChild(navigationBarCss);
-})
+});
 
 const select = document.getElementById('year');
 const currentYear = new Date().getFullYear();
@@ -81,9 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //set username as value of input with id creator
-
 fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
      if (login.isUserLoggedIn) {
         document.getElementById("creator").value = login.username;
     }
-})
+});

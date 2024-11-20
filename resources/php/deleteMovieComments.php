@@ -16,7 +16,7 @@ if (isset($header_id["id"])) {
         die("Connection Failed: " . $conn->connect_error);
     }
 
-    //remove movie
+    //remove comments
     $stmt = $conn->prepare("DELETE FROM movies_comments WHERE movies_id = ?");
     $stmt->bind_param("i", $targeted_movie_id);
 

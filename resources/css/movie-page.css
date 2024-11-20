@@ -231,6 +231,12 @@ a {
 }
 
 /*COMMENTS*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .movie-review-container {
     width: 93%;
     height: 1320px;
@@ -349,18 +355,18 @@ a {
     background-color: black;
     padding: 10px;
     width: 90px;
-    margin-top: 12px;
     color: white;
     font-family: "Gabarito", sans-serif;
     font-size: 15px;
     transition: 300ms;
     cursor: pointer;
+    display: block;
+    margin: 20px auto;
 }
 
 #sumbit-comment-btn:hover {
     background-color: rgb(20, 20, 20);
 }
-
 
 #starrating-label {
     color: white;

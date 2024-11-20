@@ -8,6 +8,12 @@ a {
     text-decoration: none;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .options-btns {
     margin-top: 50px;
     width: 500px;

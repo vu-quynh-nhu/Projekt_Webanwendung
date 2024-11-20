@@ -232,6 +232,11 @@ a {
 }
 
 /*COMMENTS*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .series-review-container {
     width: 93%;
@@ -357,6 +362,8 @@ a {
     font-size: 15px;
     transition: 300ms;
     cursor: pointer;
+    display: block;
+    margin: 20px auto;
 }
 
 #sumbit-comment-btn:hover {

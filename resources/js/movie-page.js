@@ -29,22 +29,22 @@ function checkForm(event) {
 fetch("../php/navigationbar.php").then(response => response.text()).then(data => {
     document.querySelector(".navbar").innerHTML = data;
 
-    let cssForNavbar= "../css/navigationbar.css";
+    let cssForNavbar = "../css/navigationbar.css";
     const navigationBarCss = document.createElement("link");
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
     document.head.appendChild(navigationBarCss);
-})
+});
 
 const selectedMovieId = getMovieDataById("id");
 let newDate = new Date();
-let date = newDate.toISOString().split("T")[0];  
+let date = newDate.toISOString().split("T")[0];
 
 const commentsContainer = document.querySelector(".movie-comments");
 const starRatingContainer = document.querySelector(".movie-starRating");
 
 fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
-    let targetedUsername; 
+    let targetedUsername;
 
     if (login.isUserLoggedIn) {
         targetedUsername = login.username;
@@ -55,7 +55,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
 
     fetch("../php/getMovies.php").then(response => response.json()).then(data => {
         const selectedMovie = data.find(movie => movie.id === selectedMovieId);
-         if (selectedMovie){
+        if (selectedMovie) {
             document.querySelector(".movie-title").textContent = selectedMovie.title;
             document.querySelector(".movie-release-year").textContent = selectedMovie.release_year;
             document.querySelector(".movie-about-title").textContent = selectedMovie.title;
@@ -77,11 +77,11 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
             document.querySelector(".movie-about-actors").textContent = selectedMovie.actors;
             document.querySelector(".movie-decription").textContent = selectedMovie.short_description;
             document.getElementById("thumbnail").src = selectedMovie.thumbnail;
-            document.getElementById("movie_id").value = selectedMovie.id; 
-            document.getElementById("movie_name").value = selectedMovie.title; 
-            document.getElementById("date_of_comment").value = date; 
+            document.getElementById("movie_id").value = selectedMovie.id;
+            document.getElementById("movie_name").value = selectedMovie.title;
+            document.getElementById("date_of_comment").value = date;
             document.title = "Reviewer - " + selectedMovie.title;
-    
+
             const movieId = selectedMovie.id;
             fetch(`../php/getCommentsMovie.php?movies_id=${movieId}`).then(response => response.json()).then(comments => {
                 if (comments.length === 0) {
@@ -93,9 +93,10 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     noComment.style.color = "rgb(153, 123, 84)";
                     noComment.style.fontSize = "22px";
                     noComment.style.fontWeight = "500";
+                    noComment.style.textAlign = "center";
                     noComment.textContent = "Es gibt zu " + selectedMovie.title + " noch keine Kommentare.";
                     commentsContainer.appendChild(noComment);
-    
+
                     let totalStars = 5;
                     for (let i = 0; i < totalStars; i++) {
                         const star = document.createElement("label");
@@ -116,7 +117,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         comment.style.borderWidth = "thin";
                         comment.style.borderColor = "rgb(94, 94, 94)";
                         commentsContainer.appendChild(comment);
-    
+
                         const comments_top_section = document.createElement("div");
                         comments_top_section.className = "comments-top-section";
                         comments_top_section.style.color = "rgb(153, 123, 84)";
@@ -126,7 +127,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         comments_top_section.style.paddingTop = "10px";
                         comments_top_section.style.textAlign = "left";
                         comment.appendChild(comments_top_section);
-    
+
                         const comments_top_section_commentator = document.createElement("div");
                         comments_top_section_commentator.className = "comments-top-section-commentator";
                         comments_top_section_commentator.innerHTML = movieComment.commentator_name;
@@ -134,17 +135,17 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         comments_top_section_commentator.style.minWidth = "10px";
                         comments_top_section_commentator.style.display = "inline-block";
                         comments_top_section.appendChild(comments_top_section_commentator);
-    
+
                         const comments_top_section_starRating = document.createElement("div");
                         comments_top_section_starRating.className = "comments-top-section-commentator";
                         comments_top_section_starRating.style.width = "139px";
                         comments_top_section_starRating.style.display = "inline-block";
                         comments_top_section_starRating.style.padding = "0px 10px 0px 10px";
                         comments_top_section.appendChild(comments_top_section_starRating);
-    
+
                         const totalStars = 5;
                         let ratedStars = movieComment.starrating;
-    
+
                         for (let i = 0; i < totalStars; i++) {
                             const star = document.createElement("label");
                             if (i < ratedStars) {
@@ -157,7 +158,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                             star.innerHTML = "★";
                             comments_top_section_starRating.appendChild(star);
                         }
-    
+
                         const date_of_comment = movieComment.date_of_comment.split("-");
                         const reverseDate = `${date_of_comment[2]}.${date_of_comment[1]}.${date_of_comment[0]}`
                         const comments_top_section_date = document.createElement("div");
@@ -170,7 +171,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         comments_top_section_date.style.marginRight = "25px";
                         comments_top_section_date.innerHTML = reverseDate;
                         comments_top_section.appendChild(comments_top_section_date);
-                        
+
                         const commemts_bottom_section = document.createElement("div");
                         commemts_bottom_section.className = "commemts-bottom-section";
                         commemts_bottom_section.style.color = "white";
@@ -181,15 +182,16 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         commemts_bottom_section.innerHTML = movieComment.comment_text;
                         commemts_bottom_section.style.textAlign = "justify";
                         comment.appendChild(commemts_bottom_section);
-                    })
-    
+                    });
+
                     let sumStarRating = 0;
                     const totalStars = 5;
+
                     comments.forEach(starRating => {
                         sumStarRating += starRating.starrating;
-                    })
+                    });
+
                     let averageStarRating = sumStarRating / comments.length;
-    
                     for (let i = 0; i < totalStars; i++) {
                         const star = document.createElement("label");
                         if (i < averageStarRating) {
@@ -203,8 +205,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         starRatingContainer.appendChild(star);
                     }
                 }
-    
-            })
-        };
-    })
-})
+            });
+        }
+    });
+});

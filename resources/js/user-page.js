@@ -18,10 +18,9 @@ function removeMovie(id) {
         }).then(() => {
             //refresh
             location.reload();
-        })
-    })
+        });
+    });
 }
-
 
 function removeSeries(id) {
     //remove series
@@ -54,7 +53,7 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
     document.head.appendChild(navigationBarCss);
-})
+});
 
 //compare movie creator with currently logged user
 fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
@@ -174,8 +173,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                                 starDiv.appendChild(star);
                             }
                         }
-
-                    })
+                    });
 
                     const deleteAndEditBtnDiv = document.createElement("div");
                     deleteAndEditBtnDiv.className = "deleteBtnDiv";
@@ -212,7 +210,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     moviesContainer.appendChild(wholeCardContainer);
                 });
             }
-        })
+        });
 
         fetch("../php/getSeries.php").then(response => response.json()).then(data => {
             const seriesContainer = document.querySelector(".series-container");
@@ -327,7 +325,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                                 starDiv.appendChild(star);
                             }
                         }
-                    })
+                    });
 
                     const deleteAndEditBtnDiv = document.createElement("div");
                     deleteAndEditBtnDiv.className = "deleteBtnDiv";
@@ -364,6 +362,6 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     seriesContainer.appendChild(wholeCardContainer);
                 });
             }
-        })
+        });
     }
-})
+});

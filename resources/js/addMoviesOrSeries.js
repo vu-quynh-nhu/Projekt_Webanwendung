@@ -6,4 +6,4 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
     document.head.appendChild(navigationBarCss);
-})
+});

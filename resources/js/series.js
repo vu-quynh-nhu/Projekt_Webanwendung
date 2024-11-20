@@ -1,3 +1,8 @@
+function getSeriesByGenre(genre) {
+    const passedUrl = new URLSearchParams(window.location.search);
+    return passedUrl.get(genre);
+}
+
 fetch("../php/navigationbar.php").then(response => response.text()).then(data => {
     document.querySelector(".navbar").innerHTML = data;
 
@@ -6,30 +11,22 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
     document.head.appendChild(navigationBarCss);
-})
-
-
-function getSeriesByGenre(genre) {
-    const passedUrl = new URLSearchParams(window.location.search);
-    return passedUrl.get(genre);
-}
+});
 
 const selectedGenre = getSeriesByGenre("genre");
-
 fetch("../php/getSeries.php").then(response => response.json()).then(data => {
     const seriesContainer = document.querySelector(".series-container");
     const seriesPopularContainer = document.querySelector(".series-popular-container");
     const headerPage = document.querySelector(".header-page");
+
     //sort series entries from lastly added to the database to firstly added
     data.sort((firstSeries, lastSeries) => lastSeries.id - firstSeries.id);
-
     const seriesOfSelectedGenre = data.filter(series => series.genre === selectedGenre);
+
     headerPage.innerHTML = `<a href="../html/series_genre_page.html">Serien </a> > ${selectedGenre}`;
     const headerPageAnchor = headerPage.querySelector("a");
-
     headerPageAnchor.style.textDecoration = "none";
     headerPageAnchor.style.color = "rgb(153, 123, 84)";
-    
     document.title = "Reviewer - " + selectedGenre;
 
     if (seriesOfSelectedGenre.length === 0) {
@@ -41,7 +38,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
         noSeriesDiv.style.textAlign = "center";
         noSeriesDiv.style.fontSize = "20px"
         noSeriesDiv.style.marginTop = "30px";
-        noSeriesDiv.innerHTML = "Es gibt für die Genre " + selectedGenre + " noch keine Einträge";
+        noSeriesDiv.textContent = "Es gibt für die Genre " + selectedGenre + " noch keine Einträge";
         seriesContainer.appendChild(noSeriesDiv);
 
         const noPopularMoviesDiv = noSeriesDiv.cloneNode(true);
@@ -98,11 +95,12 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                 if (comments.length > 0) {
                     let sumStarRating = 0;
                     const totalStars = 5;
+
                     comments.forEach(starRating => {
                         sumStarRating += starRating.starrating;
                     })
+
                     let averageStarRating = sumStarRating / comments.length;
-    
                     for (let i = 0; i < totalStars; i++) {
                         const star = document.createElement("label");
                         if (i < averageStarRating) {
@@ -142,7 +140,7 @@ fetch("../php/getSeries.php").then(response => response.json()).then(data => {
                         starDiv.appendChild(star);
                     }
                 }
-            })
+            });
         });
     }
-})
+});

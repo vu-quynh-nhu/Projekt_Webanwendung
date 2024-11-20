@@ -34,7 +34,7 @@ fetch("../php/navigationbar.php").then(response => response.text()).then(data =>
     navigationBarCss.rel = "stylesheet";
     navigationBarCss.href = cssForNavbar;
     document.head.appendChild(navigationBarCss);
-})
+});
 
 const selectedSeriesId = getSeriesDataById("id");
 let newDate = new Date();
@@ -95,6 +95,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                     noComment.style.fontSize = "22px";
                     noComment.style.fontWeight = "500";
                     noComment.textContent = "Es gibt zu " + selectedSeries.title + " noch keine Kommentare.";
+                    noComment.style.textAlign = "center";
                     commentsContainer.appendChild(noComment);
     
                     let totalStars = 5;
@@ -182,15 +183,16 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         commemts_bottom_section.innerHTML = seriesComment.comment_text;
                         commemts_bottom_section.style.textAlign = "justify";
                         comment.appendChild(commemts_bottom_section);
-                    })
+                    });
     
                     let sumStarRating = 0;
                     const totalStars = 5;
+
                     comments.forEach(starRating => {
                         sumStarRating += starRating.starrating;
-                    })
+                    });
+
                     let averageStarRating = sumStarRating / comments.length;
-    
                     for (let i = 0; i < totalStars; i++) {
                         const star = document.createElement("label");
                         if (i < averageStarRating) {
@@ -204,7 +206,7 @@ fetch("../php/loginCheck.php").then(response => response.json()).then(login => {
                         starRatingContainer.appendChild(star);
                     }
                 }
-            })
+            });
         };
-    })
+    });
 })

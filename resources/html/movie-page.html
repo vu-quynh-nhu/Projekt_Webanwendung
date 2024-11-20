@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -20,7 +21,7 @@
         <img id="thumbnail" src="">
         <div class="movie-title"> Titel </div>
         <a href="" id="edit-movie-anchor"></a>
-        
+
         <div class="movie-starRating"></div>
         <div class="movie-release-year"> Jahr </div>
         <div class="movie-creator"> Erstellt von: </div>
@@ -43,7 +44,7 @@
                 <div class="movie-about-actors">Name(n)</div>
             </div>
         </div>
-    
+
         <div class="movie-description-container">
             <p class="movie-description-header">Kurzbeschreibung</p>
             <div class="movie-decription">
@@ -52,17 +53,17 @@
         </div>
     </div>
 
-    <center>
+    <div class="container">
         <div class="movie-review-container">
             <div class="movie-review-header">
                 Bewertungen
             </div>
-            <div class="movie-comments">
-            </div>
+            <div class="movie-comments"></div>
 
             <div class="movie-review-form-container">
                 <div class="movie-review-form-header">Bewertungen schreiben</div>
-                <form action="../php/saveCommentMovie.php" method="post" class="movie-review-form" name="submit-comment" onsubmit="return checkForm(event)">
+                <form action="../php/saveCommentMovie.php" method="post" class="movie-review-form" name="submit-comment"
+                    onsubmit="return checkForm(event)">
                     <label id="name-label">Name</label><br>
                     <input type="text" id="commentator_name" name="commentator_name" value="" readonly><br>
                     <label id="starrating-label">Sternebewertung</label><br>
@@ -87,15 +88,15 @@
                     <input type="hidden" id="movie_name" name="movie_name" value="">
                     <input type="hidden" id="date_of_comment" name="date_of_comment" value="">
                     <div class="review-text-container">
-                        <textarea id="review-text" name="comment_text" placeholder="Schreibe hier deine Bewertung"></textarea><br>
+                        <textarea id="review-text" name="comment_text"
+                            placeholder="Schreibe hier deine Bewertung"></textarea><br>
                     </div>
-                    <center>
-                        <button id="sumbit-comment-btn" type="submit">senden</button>
-                    </center>
+
+                    <button id="sumbit-comment-btn" type="submit">senden</button>
                 </form>
             </div>
         </div>
-    </center>
+    </div>
     <script src="../js/movie-page.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>

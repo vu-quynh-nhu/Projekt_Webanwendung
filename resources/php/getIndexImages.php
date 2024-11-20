@@ -10,7 +10,6 @@ if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
 }
 
-//select data
 $sql = "SELECT * FROM images";
 $result = $conn->query($sql);
 
